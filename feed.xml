@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>xtt'blog</title>
+    <link href="" rel="self" />
+    <link href="http://xuting.me/" />
+    <updated>2013-08-25T23:30:00Z</updated>
+    <id>http://xuting.me/</id>
+    
+    <entry>
+        <title><![CDATA[Hello, World!]]></title>
+        <author><name>xtt</name><uri>http://xuting.me/</uri></author>
+        <link href="http://xuting.me/hello/"/>
+        <updated>2013-08-25T23:30:00Z</updated>
+        <published>2013-08-25T23:30:00Z</published>
+        <id>http://xuting.me/hello/</id>
+        <content type="html">
+            <![CDATA[
+             <p>你好, 世界!<br/>
+这是我在 Catsup 中的第一篇文章.<br/>
+我在用 <strong>MarkDown</strong> 写东西!<br/>
+<strong>哇，还支持 HTML </strong>  </p>
+
+<p>fdf  </p>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;I love python&quot;</span><span class="p">)</span>
+</pre></div>
+
+            ]]>
+        </content>
+    </entry>
+    
+</feed>

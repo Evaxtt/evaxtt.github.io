@@ -1,0 +1,5 @@
+http://xuting.me/hello/
+http://xuting.me/about/
+http://xuting.me/tag/hello-world/
+http://xuting.me/feed.xml
+http://xuting.me/
