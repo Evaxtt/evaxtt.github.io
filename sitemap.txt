@@ -3,3 +3,4 @@ http://xuting.me/about/
 http://xuting.me/tag/hello-world/
 http://xuting.me/feed.xml
 http://xuting.me/
+http://xuting.me/404.html
