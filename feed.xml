@@ -3,26 +3,168 @@
     <title>Xtt's Blog</title>
     <link href="" rel="self" />
     <link href="http://xuting.me/" />
-    <updated>2013-08-25T23:30:00Z</updated>
+    <updated>2016-01-02T20:30:00Z</updated>
     <id>http://xuting.me/</id>
     
     <entry>
-        <title><![CDATA[Hello, World!]]></title>
+        <title><![CDATA[使用catsup快速建立个人博客]]></title>
         <author><name>xtt</name><uri>http://xuting.me/</uri></author>
-        <link href="http://xuting.me/hello/"/>
-        <updated>2013-08-25T23:30:00Z</updated>
-        <published>2013-08-25T23:30:00Z</published>
-        <id>http://xuting.me/hello/</id>
+        <link href="http://xuting.me/使用catsup快速建立个人博客/"/>
+        <updated>2016-01-02T20:30:00Z</updated>
+        <published>2016-01-02T20:30:00Z</published>
+        <id>http://xuting.me/使用catsup快速建立个人博客/</id>
         <content type="html">
             <![CDATA[
-             <p>你好, 世界!<br/>
-这是我在 Catsup 中的第一篇文章.<br/>
-我在用 <strong>MarkDown</strong> 写东西!<br/>
-<strong>哇，还支持 HTML </strong>  </p>
+             <h3>一.安装</h3>
 
-<p>fdf  </p>
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;I love python&quot;</span><span class="p">)</span>
-</pre></div>
+<p>1.使用pip安装catsup：(sudo) pip install catsup<br/>
+  从旧版本升级到新版本：(sudo) pip install catsup —upgrade  </p>
+
+<p>2.用git安装catsup：  </p>
+
+<pre><code>$git clone git://github.com/whtsky/catsup.git  
+$cd catsup  
+# 当前使用git submodule 来管理主题（当前版本是 sealscript,主题可以自由更换 ）  
+$git submodule init  
+$git submodule update  
+$python setup.py install</code></pre>
+
+<h3>二.快速建站</h3>
+
+<p>1.建立新站点</br>  </p>
+
+<p>安装完catsup之后根目录下会出现一个目录 catsup，进入catsup目录  </p>
+
+<pre><code>$cd catsup  
+$mkdir site  
+$cd site  
+$catsup init</code></pre>
+
+<p>接着site目录下会自动穿件配置文件 config.json 和一个空白的文章目录posts  </p>
+
+<p>2.配置新站点  </p>
+
+<pre><code>$ vim config.json</code></pre>
+
+<ul>
+<li>insert键进入编辑模式，Mac电脑 i 键进入编辑模式；<br/></li>
+<li>修改完成esc退出编辑模式，:q! 直接退出 |  :wq 保存后退出（具体vim的使用方法可百度）<br/></li>
+<li>site.name : 站点的名字<br/></li>
+<li>site.description : 站点的描述<br/></li>
+<li>site.url : 站点的 URL 。比如 <a href="http://example.com">http://example.com</a><br/></li>
+<li>author.name : 你的名字<br/></li>
+</ul>
+
+<p>3.创建文章  </p>
+
+<pre><code>$cd posts  
+$vim helloworld.md</code></pre>
+
+<p><strong>一个名为 Hello World 文章应该是这样的(格式要严格遵守)</strong>  </p>
+
+<pre><code># Hello world(文章标题)  
+－ time：2016-01-02 20:30  
+－ tags：hello world  
+
+---  
+
+文章内容（具体markdown的书写语法参照：http://www.appinn.com/markdown/index.html）</code></pre>
+
+<p>然后，写一个独立页面来介绍你的站点  </p>
+
+<pre><code>$vim posts/about.md</code></pre>
+
+<p><strong>一个「关于」页面应该是这样的（严格遵守格式）</strong>  </p>
+
+<pre><code># 名字  
+
+－ time：2016-01-02 21:00  
+－type：page  
+
+---  
+具体介绍内容</code></pre>
+
+<p>4.生成站点  </p>
+
+<pre><code>$catsup server（预览，打开浏览器http://127.0.0.1:8888 .）  
+$catsup build（生成站点）</code></pre>
+
+<p>站点生成成功后，site的文件里会多一个 deploy文件  </p>
+
+<pre><code>$ls  
+config.json deploy posts</code></pre>
+
+<h3>三.部署站点</h3>
+
+<p>1.首先你要有一个Github账号，如果没有请去创建一个（<a href="https://github.com），">https://github.com），</a><br/>
+然后配置ssh,详情参看教程：<a href="http://blog.csdn.net/keyboardota/article/details/7603630,（已经有Github并且配置过ssh可忽略这两步）">http://blog.csdn.net/keyboardota/article/details/7603630,（已经有Github并且配置过ssh可忽略这两步）</a><br/>
+ 最后要在Github里面新建一个repository,如下：<br/>
+ <img src="http://7xpt78.com1.z0.glb.clouddn.com/%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93.png" alt="创建仓库"/>  </p>
+
+<p>2.然后修改本机site目录下的配置文件deploy  </p>
+
+<pre><code>$vim config.json</code></pre>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/%E9%85%8D%E7%BD%AE.png" alt="修改配置"/>  </p>
+
+<p>在这之后可以预览站点  </p>
+
+<pre><code>$catsup server  
+然后在浏览器输入 http://127.0.0.1:8888即可预览新站点</code></pre>
+
+<p>最后把站点部署到 GitHub Pages 上  </p>
+
+<pre><code>$catsup build &amp;&amp; catsup deploy(以后每一次修改配置提交到要执行这步)</code></pre>
+
+<p>3.在浏览器上打开http://your_github_name.github.io 可以看到你的新站点  </p>
+
+<h3>四.将已经建好的网站和域名联系起来(如果没有域名可省略这步)</h3>
+
+<ul>
+<li><p>购买域名 ：可以在godaddy购买  </p></li>
+<li><p>配置（以godaddy为例）：登录后配置已购买的域名，指向you_github_name.github.io即可。<br/>
+现在在浏览器中输入你的域名url会直接跳转到部署好的站点上。  </p></li>
+</ul>
+
+<hr/>
+
+<h3>后记</h3>
+
+<p>1.修改主题：</br>  </p>
+
+<ul>
+<li>第一步：可以自己写一个主题或者Github上克隆大神们已经写好的主题；<br/></li>
+<li><p>第二步：修改配置文件  </p>
+
+<pre><code>$cd site  
+$vim config.json  
+然后将theme下的&quot;name&quot;修改为你的主题名称，然后重新提交部署站点  
+$catsup build &amp;&amp; catsup deploy</code></pre></li>
+</ul>
+
+<p>2.设置评论平台： (多说或者dispus等等)</br><br/>
+以dispus为例（大多数情况下需要翻墙）：</br>  </p>
+
+<ul>
+<li>第一步：dispus官网注册一个账号（<a href="https://disqus.com/）">https://disqus.com/）</a><br/></li>
+<li>第二步：点击settings下的Add dispus to site，<br/></li>
+</ul>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/dispus.png" alt="配置dispus"/>  </p>
+
+<ul>
+<li><p>第三步，回到本地site目录修改配置文件，  </p>
+
+<pre><code>$vim config.json  
+修改comment部分如下：</code></pre>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/comment.png" alt="修改配置"/>  </p></li>
+<li><p>第四步：重新提交部署站点：  </p>
+
+<pre><code>$catsup build &amp;&amp; catsup deploy</code></pre>
+
+<p>3.还有就是好好充实博客内容啦噜＋＋  </p></li>
+</ul>
 
             ]]>
         </content>

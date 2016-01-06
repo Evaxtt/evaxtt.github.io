@@ -1,6 +1,6 @@
-http://xuting.me/hello/
+http://xuting.me/使用catsup快速建立个人博客/
 http://xuting.me/about/
-http://xuting.me/tag/hello-world/
+http://xuting.me/tag/catsup/
 http://xuting.me/feed.xml
 http://xuting.me/
 http://xuting.me/404.html
