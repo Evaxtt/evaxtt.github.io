@@ -3,8 +3,53 @@
     <title>Xtt's Blog</title>
     <link href="" rel="self" />
     <link href="http://xuting.me/" />
-    <updated>2016-01-07T15:30:00Z</updated>
+    <updated>2016-01-08T10:30:00Z</updated>
     <id>http://xuting.me/</id>
+    
+    <entry>
+        <title><![CDATA[dnspod域名解析设置]]></title>
+        <author><name>xtt</name><uri>http://xuting.me/</uri></author>
+        <link href="http://xuting.me/dnspod/"/>
+        <updated>2016-01-08T10:30:00Z</updated>
+        <published>2016-01-08T10:30:00Z</published>
+        <id>http://xuting.me/dnspod/</id>
+        <content type="html">
+            <![CDATA[
+             <p>&nbsp;&nbsp;&nbsp;&nbsp;因为我的博客是用Github page搭建的，所以要把域名和Github_name.github.io的URL联系起来。本人实在小白一个，就纪录一下设置过程留着以后可以回顾。  </p>
+
+<h3>一.购买域名</h3>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;购买域名的网站很多啦，百度一搜一大把，本人是在godaddy上买的，有时候会有打折。  </p>
+
+<h3>二.将已经搭建好的网站和域名联系起来</h3>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;我本来是用godaddy的dns服务器搭建的，但是服务器不太稳定，早上起来就发现得翻墙才能打开自己的博客，所以决定使用国内的dns服务器。  </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;百度一下发现dnspod口碑不错，而且是免费的，所以决定使用dnspod的dns服务器。具体操作方法如下：  </p>
+
+<ol>
+<li><p>首先在本地博客网站所在目录deploy下新建一个CNAME文件，路径如下，在cname文件中写下你的域名，保存，上传到Github上。<br/>
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/%E6%B7%BB%E5%8A%A0CNAME.png" width = "400" height = "200" alt="dns1" align=center />  </p></li>
+<li><p>在dnspod官网注册一个帐号，也可以使用qq帐号直接登录，然后  </p>
+
+<p>点击绿色按钮添加域名<br/>
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/dns%201.png" width = "600" height = "150" alt="dns1" align=center />  </p>
+
+<p>点击你刚添加的域名，会载入如下信息：（此时只会出现如图灰色方框的两条纪录）<br/>
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/dns%202.png" width = "700" height = "200" alt="dns2" align=center />  </p></li>
+<li><p>登录godaddy网站，在用户名的下拉菜单中点击Manage my domain，会出现如下界面：<br/>
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/dns%203.png" width = "700" height = "150" alt="dns2" align=center />  </p></li>
+<li><p>单击你要配置的域名会出现具体信息，然后找到Nameserver,单击manage:<br/>
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/dns%205.png" width = "600" height = "70" alt="dns2" align=center />  </p></li>
+<li><p>然后选择customer模式，添加纪录（如下图显示的两条纪录nameserver）,然后保存：<br/>
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/dns%206.png" width = "600" height = "400" alt="dns2" align=center />  </p></li>
+<li><p>继续回到dnspod网站，如果你之前在godaddy的dns服务器已经配置过，单击你已经添加的域名会自动导入纪录，如果没有，就手动添加一个A纪录和一个CNAME纪录（如下图）：<br/>
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/dns%202.png" width = "700" height = "200" alt="dns2" align=center />  </p></li>
+</ol>
+
+            ]]>
+        </content>
+    </entry>
     
     <entry>
         <title><![CDATA[考研二三事]]></title>
@@ -144,14 +189,6 @@ config.json deploy posts</code></pre>
 <pre><code>$catsup build &amp;&amp; catsup deploy(以后每一次修改配置提交到要执行这步)</code></pre>
 
 <p>3.在浏览器上打开http://your_github_name.github.io 可以看到你的新站点  </p>
-
-<h3>四.将已经建好的网站和域名联系起来(如果没有域名可省略这步)</h3>
-
-<ul>
-<li><p>购买域名 ：可以在godaddy购买  </p></li>
-<li><p>配置（以godaddy为例）：登录后配置已购买的域名，指向you_github_name.github.io即可。<br/>
-现在在浏览器中输入你的域名url会直接跳转到部署好的站点上。  </p></li>
-</ul>
 
 <hr/>
 

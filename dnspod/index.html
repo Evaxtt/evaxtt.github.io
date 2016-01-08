@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-catsup | Xtt's Blog
+dnspod域名解析设置 | Xtt's Blog
 </title>
   <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.4.2/css/amazeui.min.css">
   <link rel="stylesheet" href="http://xuting.me/static/css/style.css?v=2803442f803fb375c48ddafc39742335" type="text/css" />
@@ -33,65 +33,74 @@ catsup | Xtt's Blog
       <div class="am-g am-g-fixed blog-g-fixed">
         <div class="am-u-md-9">
         
-<h1>catsup 标签下的文章</h1>
-<!-- blog list -->
-<div class="blog-list">
-  <!--样本 开始-->
-  
-  <article class="blog-main">
+<article class="post-main" id="post-font">
+  <header class="blog-header">
     <span class="round-date">
       <span class="month">01月</span>
       <span class="day">08</span>
     </span>
-    <header class="blog-header">
-      <p class="blog-title">
-        <a href="http://xuting.me/dnspod/">dnspod域名解析设置</a>
-      </p>
-      <p class="blog-meta">
-        <i class="am-icon-calendar"></i> 发表于 Jan 08, 2016 • 
-        <!--<i class="am-icon-binoculars"></i> 87 次围观 • -->
-        <!--<i class="am-icon-bookmark"></i> 0条评论-->
-        
+    <p class="blog-title">dnspod域名解析设置</p>
+    <p class="blog-meta">
+      <i class="am-icon-calendar"></i> Published at Jan 08, 2016 • 
+      <!--<i class="am-icon-binoculars"></i> 87 次围观 • -->
+      <!--<i class="am-icon-bookmark"></i> 0条评论-->
+      
         <a class="am-badge am-badge-primary am-radius" href="http://xuting.me/tag/catsup/">catsup</a>
-        
-      </p>
-    </header>
-    <section class="blog-content">
-      <p>&nbsp;&nbsp;&nbsp;&nbsp;因为我的博客是用Github page搭建的，所以要把域名和Github_name.github.io的URL联系起来。本人实在小白一个，就纪录一
-    </section>
-    <a class="am-badge am-badge-secondary am-radius blog-content-more" href="http://xuting.me/dnspod/">阅读全文</a>
-  </article>
-  
-  <article class="blog-main">
-    <span class="round-date">
-      <span class="month">01月</span>
-      <span class="day">02</span>
-    </span>
-    <header class="blog-header">
-      <p class="blog-title">
-        <a href="http://xuting.me/catsup_for_blog/">使用catsup快速建立个人博客</a>
-      </p>
-      <p class="blog-meta">
-        <i class="am-icon-calendar"></i> 发表于 Jan 02, 2016 • 
-        <!--<i class="am-icon-binoculars"></i> 87 次围观 • -->
-        <!--<i class="am-icon-bookmark"></i> 0条评论-->
-        
-        <a class="am-badge am-badge-primary am-radius" href="http://xuting.me/tag/catsup/">catsup</a>
-        
-      </p>
-    </header>
-    <section class="blog-content">
-      <h3>一.安装</h3>
+      
+    </p>
 
-<p>1.使用pip安装catsup：(sudo) pip install catsup<br/>
-  从旧版本升级到新版本：(sudo) pip install cat
-    </section>
-    <a class="am-badge am-badge-secondary am-radius blog-content-more" href="http://xuting.me/catsup_for_blog/">阅读全文</a>
-  </article>
+  </header>
+  <section class="blog-content">
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;因为我的博客是用Github page搭建的，所以要把域名和Github_name.github.io的URL联系起来。本人实在小白一个，就纪录一下设置过程留着以后可以回顾。  </p>
+
+<h3>一.购买域名</h3>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;购买域名的网站很多啦，百度一搜一大把，本人是在godaddy上买的，有时候会有打折。  </p>
+
+<h3>二.将已经搭建好的网站和域名联系起来</h3>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;我本来是用godaddy的dns服务器搭建的，但是服务器不太稳定，早上起来就发现得翻墙才能打开自己的博客，所以决定使用国内的dns服务器。  </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;百度一下发现dnspod口碑不错，而且是免费的，所以决定使用dnspod的dns服务器。具体操作方法如下：  </p>
+
+<ol>
+<li><p>首先在本地博客网站所在目录deploy下新建一个CNAME文件，路径如下，在cname文件中写下你的域名，保存，上传到Github上。<br/>
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/%E6%B7%BB%E5%8A%A0CNAME.png" width = "400" height = "200" alt="dns1" align=center />  </p></li>
+<li><p>在dnspod官网注册一个帐号，也可以使用qq帐号直接登录，然后  </p>
+
+<p>点击绿色按钮添加域名<br/>
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/dns%201.png" width = "600" height = "150" alt="dns1" align=center />  </p>
+
+<p>点击你刚添加的域名，会载入如下信息：（此时只会出现如图灰色方框的两条纪录）<br/>
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/dns%202.png" width = "700" height = "200" alt="dns2" align=center />  </p></li>
+<li><p>登录godaddy网站，在用户名的下拉菜单中点击Manage my domain，会出现如下界面：<br/>
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/dns%203.png" width = "700" height = "150" alt="dns2" align=center />  </p></li>
+<li><p>单击你要配置的域名会出现具体信息，然后找到Nameserver,单击manage:<br/>
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/dns%205.png" width = "600" height = "70" alt="dns2" align=center />  </p></li>
+<li><p>然后选择customer模式，添加纪录（如下图显示的两条纪录nameserver）,然后保存：<br/>
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/dns%206.png" width = "600" height = "400" alt="dns2" align=center />  </p></li>
+<li><p>继续回到dnspod网站，如果你之前在godaddy的dns服务器已经配置过，单击你已经添加的域名会自动导入纪录，如果没有，就手动添加一个A纪录和一个CNAME纪录（如下图）：<br/>
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/dns%202.png" width = "700" height = "200" alt="dns2" align=center />  </p></li>
+</ol>
+
+  </section>
   
-  <!--样本 结束-->
-</div>
-<!-- blog list -->
+    
+        
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+				var disqus_title = "";
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = 'http://evaxtt.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+        
+        
+    
+
+</article>
 
         </div>
 
