@@ -5,6 +5,7 @@ http://xuting.me/AboutMe/
 http://xuting.me/tag/life/
 http://xuting.me/tag/dnspod/
 http://xuting.me/tag/catsup/
+http://xuting.me/tag/index.html
 http://xuting.me/archive/2016/
 http://xuting.me/archive/index.html
 http://xuting.me/feed.xml
