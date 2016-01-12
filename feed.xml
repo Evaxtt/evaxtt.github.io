@@ -3,8 +3,364 @@
     <title>Xtt's Blog</title>
     <link href="" rel="self" />
     <link href="http://xuting.me/" />
-    <updated>2016-01-08T10:30:00Z</updated>
+    <updated>2016-01-12T14:00:00Z</updated>
     <id>http://xuting.me/</id>
+    
+    <entry>
+        <title><![CDATA[常见正则表达式使用]]></title>
+        <author><name>xtt</name><uri>http://xuting.me/</uri></author>
+        <link href="http://xuting.me/RegularExpression/"/>
+        <updated>2016-01-12T14:00:00Z</updated>
+        <published>2016-01-12T14:00:00Z</published>
+        <id>http://xuting.me/RegularExpression/</id>
+        <content type="html">
+            <![CDATA[
+             <h2>正则表达式是什么？</h2>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要。正则表达式就是用于描述这些规则的工具。</br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;快速理解：为了提高工作效率，比如你想在几千万个姓名中寻找一个叫徐瘦婷的人，但是你把这个瘦字忘掉了，用正则表达式可以这样写  </p>
+
+<pre><code>徐.*?婷</code></pre>
+
+<p>这样就可以把所有第一个字为徐，最后一个字为婷的用户列出来，比如：  </p>
+
+<pre><code>徐大婷  
+徐小婷  
+徐胖婷  
+.......</code></pre>
+
+<p>好了，下面整理的一些常用正则表达式的使用语法～  </p>
+
+<h4>一.常用的元字符</h4>
+
+<table>  
+<tr>  
+<td>代码</td>  
+<td>&nbsp;&nbsp;&nbsp;&nbsp;说明</td>  
+</tr>   
+<tr>  
+<td>.</td>  
+<td>匹配除换行符以外的任意字符</td>  
+</tr>   
+<tr>  
+<td>w</td>  
+<td>匹配字母或数字或下划线或汉字</td>  
+</tr>   
+<tr>  
+<td>s</td>  
+<td>匹配任意的空白符</td>  
+</tr>   
+<tr>  
+<td>d</td>  
+<td>匹配数字</td>  
+</tr>   
+<tr>  
+<td>b</td>  
+<td>匹配单词的开始或结束（位置）</td>  
+</tr>   
+<tr>  
+<td>^</td>  
+<td>匹配字符串的开始（位置）</td>  
+</tr>  
+<tr>  
+<td>$</td>  
+<td>匹配字符串的结束（位置）</td>  
+</tr>   
+<tr>  
+<td> ＊ </td>  
+<td>指定*前边的内容可以连续重复使用任意次（次数）</td>  
+</tr>    
+</table>  
+  
+
+<p>举几个例子说明一下使用方法：  </p>
+
+<ul>
+<li>\b ：&nbsp;&nbsp;是正则表达式规定的一个特殊代码,代表着单词的开头或结尾，也就是单词的分界处。<br/></li>
+<li>\d+ ：&nbsp;&nbsp;匹配1个或更多连续的数字。这里的+是和＊类似的元字符，不同的是＊匹配重复任意次(可能是0次)，而+则匹配重复1次或更多次。<br/>
+-\b\w{5}\b ：&nbsp;&nbsp;匹配刚好 5 个字符的单词。<br/></li>
+<li>ba\w * \b ：&nbsp;&nbsp;匹配以字母 a 开头的单词——先是某个单词开始处(\b)，然后是字母 a，然后是任意数量的字母或数字(\w*)，最后是单词结束处(\b)。<br/></li>
+<li>0\d\d-\d\d\d\d\d\d\d\d ：&nbsp;&nbsp;匹配这样的字符串：以 0 开头，然后是两个数字，然后是一个连字号 “-”，最后是 8 个数字(也就是电话号码).简写为0\d{2}-\d{8} 。<br/></li>
+<li>\bYou\b.*\bHappy\b ：&nbsp;&nbsp;先是匹配一个单词 You，然后是任意个任意字符(但不能是换行)，最后是 Happy 这个单词。<br/></li>
+<li>^ \d{5,12}$：&nbsp;&nbsp;要求数字必须为5位到12位。<br/></li>
+</ul>
+
+<p><strong>注意问题:字符转义</strong>  </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 如果你想查找元字符本身的话，比如你查找 . 或者 *，就出现了问题：你没办法指定它们，因为它们会被解释成别的意思。这时你就得使用\ 来取消这些字符的特殊意义。因此，你应该使用 \ . 和 \ * 。当然，要查找 \ 本身，你也得用 \。</br>  </p>
+
+<pre><code>例如：unibetter\.com 匹配unibetter.com，C:\\Windows 匹配 C:\Windows</code></pre>
+
+<h4>二.反义字符</h4>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;有时需要查找不属于某个能简单定义的字符类的字符。比如想查找除了数字以外，其它任意字符都行的情况，这时需要用到反义：  </p>
+
+<ul>
+<li>常用的反义代码<br/></li>
+</ul>
+
+<table>  
+<tr>  
+<td>代码／语法</td>  
+<td>&nbsp;&nbsp;&nbsp;&nbsp;说明</td>  
+</tr>   
+<tr>  
+<td>\W</td>  
+<td>匹配任意不是字母，数字，下划线，汉字的字符</td>  
+</tr>   
+<tr>  
+<td>\S</td>  
+<td>匹配任意不是空白符的字符</td>  
+</tr>   
+<tr>  
+<td>\D</td>  
+<td>匹配任意非数字的字符</td>  
+</tr>   
+<tr>  
+<td>\B</td>  
+<td>匹配不是单词开头或结束的位置</td>  
+</tr>   
+<tr>  
+<td>[^x]</td>  
+<td>匹配除了 x 以外的任意字符</td>  
+</tr>   
+<tr>  
+<td>[^aeiou]</td>  
+<td>匹配除了 aeiou 这几个字母以外的任意字符</td>  
+</tr>  
+</table>  
+   
+
+<pre><code>举例：\S+匹配不包含空白符的字符串   
+ &lt;a[^&gt;]+&gt; 匹配用尖括号括起来的以 a 开头的字符串。</code></pre>
+
+<h4>三.常用限定符</h4>
+
+<p>1.重复  </p>
+
+<table>  
+<tr>  
+<td>代码</td>  
+<td>&nbsp;&nbsp;&nbsp;&nbsp;说明</td>  
+</tr>   
+<tr>  
+<td>＊</td>  
+<td>重复零次或多次</td>  
+</tr>   
+<tr>  
+<td>＋</td>  
+<td>重复一次或更多次</td>  
+</tr>   
+<tr>  
+<td>s</td>  
+<td>匹配任意的空白符</td>  
+</tr>   
+<tr>  
+<td>？</td>  
+<td>重复零次会一次</td>  
+</tr>   
+<tr>  
+<td>{n}</td>  
+<td>重复n次</td>  
+</tr>   
+<tr>  
+<td>{n,}</td>  
+<td> 重复n次或更多次</td>  
+</tr>  
+<tr>  
+<td>$</td>  
+<td>匹配字符串的结束（位置）</td>  
+</tr>   
+<tr>  
+<td> {n,m}</td>  
+<td>重复n到m次</td>  
+</tr>    
+</table>  
+  
+
+<pre><code>举例说明：load\d+ 匹配 load后面跟 1 个或更多数字  
+    ^\w+ 匹配一行(或一个字符串)的第一个单词</code></pre>
+
+<p>2.分组（重复多个字符）  </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;举例：(\d{1,3}.){3}\d{1,3} 是一个简单的IP地址匹配表达式。要理解这个表达式，请按下列顺序分析它：  </p>
+
+<pre><code>\d{1,3} 匹配 1 到 3 位的数字，(\d{1,3}\.){3} 匹配三位数字加上一个英文句号(这个整体也就是这个分组)重复 3 次，最后再加上一个一到三位的数字 (\d{1,3})。</code></pre>
+
+<ul>
+<li>常用分组语法<br/></li>
+</ul>
+
+<table>  
+<tr>  
+<td>分类 </td>  
+<td>代码/语法</td>  
+<td>&nbsp;&nbsp;&nbsp;&nbsp;说明</td>  
+</tr>   
+<tr>  
+<td>捕获</td>  
+<td>(exp)</td>  
+<td>匹配exp,并捕获文本到自动命名的组里</td>  
+</tr>   
+<tr>  
+<td>捕获</td>  
+<td>(?< name >exp)</td>  
+<td>匹配exp,并捕获文本到名称为name的组里，也可以写成(?’name’exp)  
+</td>  
+</tr>   
+<tr>  
+<td>捕获</td>  
+<td>(?:exp) </td>  
+<td>匹配exp,不捕获匹配的文本，也不给此分组分配组号</td>  
+</tr>   
+<tr>  
+<td>零宽断言</td>  
+<td>(?=exp)</td>  
+<td>匹配exp前面的位置</td>  
+</tr>   
+<tr>  
+<td>零宽断言</td>  
+<td>(?<=exp)</td>  
+<td>匹配exp后面的位置</td>  
+</tr>   
+<tr>  
+<td>零宽断言</td>  
+<td>(?!exp)</td>  
+<td> 匹配后面跟的不是exp的位置</td>  
+</tr>  
+<tr>  
+<td>零宽断言</td>  
+<td>(?<=exp)</td>  
+<td>匹配前面不是exp的位置</td>  
+</tr>   
+<tr>  
+<td> 注释</td>  
+<td>(?#comment)</td>  
+<td>这种类型的分组不对正则表达式的处理产生任何影响，用于提供注释让人阅读</td>  
+</tr>    
+</table>  
+  
+
+<p>(<strong>注：零宽断言</strong><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;像 \b , ^ , $ 那样用于指定一个位置，这个位置应该满足一定的条件(即断言)，因此它们也被称为零宽断言。)</br>  </p>
+
+<p>3.后向引用  </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;使用小括号指定一个子表达式后，匹配这个子表达式的文本(也就是此分组捕获的内容)可以在表达式或其它程序中作进一步的处理。  </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;后向引用用于重复搜索前面某个分组匹配的文本。例如，\b(\w+)\b\s+\1\b 可以用来匹配重复的单词，像 go go, 或者 kitty kitty。</br>  </p>
+
+<pre><code>这个表达式首先是一个单词，也就是单词开始处和结束处之间的多于一个的字母或数字 (\b(\w+)\b)，这个单词会被捕获到编号为 1 的分组中，然后是 1 个或几个空白符 (\s+)，最后是分组1中捕获的内容（也就是前面匹配的那个单词）(\1)。&lt;/br&gt;</code></pre>
+
+<p>4.贪婪与懒惰限定符  </p>
+
+<ul>
+<li><p>贪婪限定符：最长匹配（匹配尽可能多的字符）。  </p>
+
+<pre><code>举例：a.*b，它将会匹配最长的以 a 开始，以 b 结束的字符串。如果用它来搜索 aabab 的话，它会匹配整个字符串 aabab。</code></pre></li>
+<li><p>懒惰匹配：最短匹配（匹配尽可能少的字符）。  </p>
+
+<pre><code>举例：a.*?b ，以 a 开始，以 b 结束的字符串。如果把它应用于 aabab的话，它会匹配 aab（第一到第三个字符）和 ab（第四到第五个字符）。</code></pre></li>
+<li><p>常用懒惰限定符  </p></li>
+</ul>
+
+<table>  
+<tr>  
+<td>代码/语法</td>  
+<td>&nbsp;&nbsp;&nbsp;&nbsp;说明</td>  
+</tr>   
+<tr>  
+<td>*?</td>  
+<td>重复1次或更多次，但尽可能少重复  
+</td>  
+</tr>   
+<tr>  
+<td>+?</td>  
+<td>重复0次或1次，但尽可能少重复  
+</td>  
+</tr>   
+<tr>  
+<td>??</td>  
+<td>重复n到m次，但尽可能少重复</td>  
+</tr>   
+<tr>  
+<td>{n,m}?</td>  
+<td>匹配不是单词开头或结束的位置</td>  
+</tr>   
+<tr>  
+<td>{n,}?</td>  
+<td>重复n次以上，但尽可能少重复  
+</td>  
+</tr>   
+</table>  
+  
+
+<h4>四.其他常用语法</h4>
+
+<table>  
+<tr>  
+<td>代码/语法</td>  
+<td>&nbsp;&nbsp;&nbsp;&nbsp;说明</td>  
+</tr>   
+<tr>  
+<td>\a</td>  
+<td>报警字符(打印它的效果是电脑嘀一声)</td>  
+</tr>   
+<tr>  
+<td>\t</td>  
+<td>制表符，Tab</td>  
+</tr>   
+<tr>  
+<td>\r</td>  
+<td>回车/td>  
+</tr>   
+<tr>  
+<td>\v</td>  
+<td>竖向制表符</td>  
+</tr>   
+<tr>  
+<td>\f</td>  
+<td换页符</td>  
+</tr>   
+<tr>  
+<td>\n</td>  
+<td>换页符</td>  
+</tr>   
+<tr>  
+<td>\e</td>  
+<td>escape</td>  
+</tr>   
+<tr>  
+<td>\0nn</td>  
+<td>ASCII代码中八进制代码为nn的字符  
+</td>  
+</tr>   
+<tr>  
+<td>\xnn</td>  
+<td>ASCII代码中十六进制代码为nn的字符</td>  
+</tr>   
+<tr>  
+<td>\unnnnr</td>  
+<td>Unicode代码中十六进制代码为nnnn的字符</td>  
+</tr>   
+<tr>  
+<td>\G</td>  
+<td>当前搜索的开头</td>  
+</tr>   
+</table>  
+  
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;介绍比较简单，详细用法可参考关于正则表达式语言元素的MSDN在线文档:<a href="https://msdn.microsoft.com/zh-cn/library/az24scfc.aspx">https://msdn.microsoft.com/zh-cn/library/az24scfc.aspx</a>  </p>
+
+<h4>五.补充几个正则表达式编辑器(本小白也没用过，有待进一步探索)：</h4>
+
+<p>Debuggex ：<a href="https://www.debuggex.com/">https://www.debuggex.com/</a></br><br/>
+PyRegex：<a href="http://www.pyregex.com/">http://www.pyregex.com/</a></br><br/>
+Regexper：<a href="http://www.regexper.com/">http://www.regexper.com/</a></br>  </p>
+
+            ]]>
+        </content>
+    </entry>
     
     <entry>
         <title><![CDATA[dnspod域名解析设置]]></title>
