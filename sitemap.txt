@@ -1,9 +1,7 @@
 http://xuting.me/RegularExpression/
 http://xuting.me/dnspod/
-http://xuting.me/kaoyan/
 http://xuting.me/catsup_for_blog/
 http://xuting.me/AboutMe/
-http://xuting.me/tag/life/
 http://xuting.me/tag/regularExpression/
 http://xuting.me/tag/dnspod/
 http://xuting.me/tag/catsup/
