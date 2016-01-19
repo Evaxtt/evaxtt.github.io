@@ -3,15 +3,15 @@
     <title>Xtt's Blog</title>
     <link href="" rel="self" />
     <link href="http://xuting.me/" />
-    <updated>2016-01-19T17:32:16Z</updated>
+    <updated>2016-01-19T17:30:00Z</updated>
     <id>http://xuting.me/</id>
     
     <entry>
         <title><![CDATA[Dom事件探秘]]></title>
         <author><name>xtt</name><uri>http://xuting.me/</uri></author>
         <link href="http://xuting.me/domEvent/"/>
-        <updated>2016-01-19T17:32:16Z</updated>
-        <published>2016-01-19T17:32:16Z</published>
+        <updated>2016-01-19T17:30:00Z</updated>
+        <published>2016-01-19T17:30:00Z</published>
         <id>http://xuting.me/domEvent/</id>
         <content type="html">
             <![CDATA[
@@ -515,6 +515,33 @@ Regexper：<a href="http://www.regexper.com/">http://www.regexper.com/</a></br> 
 </ol>
 
 <p>7.现在在去浏览器输入你的域名就可以直接跳转到你的博客界面啦～不会再显示your_github_name.github.io 这个URL了～  </p>
+
+            ]]>
+        </content>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[考研二三事]]></title>
+        <author><name>xtt</name><uri>http://xuting.me/</uri></author>
+        <link href="http://xuting.me/kaoyan/"/>
+        <updated>2016-01-06T15:30:00Z</updated>
+        <published>2016-01-06T15:30:00Z</published>
+        <id>http://xuting.me/kaoyan/</id>
+        <content type="html">
+            <![CDATA[
+             <p>&nbsp; &nbsp; &nbsp; &nbsp; 距考研结束已经过去十天了，考试之前像高考之前一下 各种幻想考完研要怎么样怎么样，真正考完了却什么都不想做。最后几天脑细胞死的太多，考完后不想吃不想玩，只想睡几个懒觉后回到正常的作息。</br>  </p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; 大概大三上学期结束就做了要考研的打算，但是下学期的课还是很多，真正开始准备考研应该是7月下旬。因为同学考研的不多而且大部分已经找到研友所以刚开始没有找到研友也没觉得什么就是自己复习。总结10月份之前的复习就是一句话，三天打鱼两天晒网。9月底因为一些私人事情实在无心学习回家待了10天左右，回来之后已经开始倒计时100天了。</br>  </p>
+
+<p>&nbsp; &nbsp;&nbsp; &nbsp;  因为报考的学校专业课是408统考内容比较多，所以回来之后就开始认真进入专业课的复习，四门课搭配王道单科资料，基本上时15天看完一科加做完一本资料，大概到了50天的时候才把专业课一轮过了一遍。当时的感觉就是时间太紧张，什么都没复习完肯定考不上了，然后蠢到去找了实习，从投完简历到面试结束大概浪费了三四天的时间，两个面试我的人也是经历过考研的人，劝我不要在最关键的时候放弃，回来好好考研。那个时候只知道压力很大，当局者迷，只想着摆脱当前的处境，现在回过头来看看这一路，最庆幸的就是当时在分叉路口的时候继续坚持了下来。</br>  </p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; 考研的最后40天，最辛苦最难熬也是最开心的40天。遇到了几个志同道合的小伙伴，每天互相督促鼓励，起早贪黑最然辛苦却也心安。真的很庆幸遇到这群小伙伴也很感激这群小伙伴，不然最后的两个星期我真的会精神紊乱的＝＝每12点以后睡，6点半起，图书馆一坐就是一整天，眼圈一天比一天黑，头发也掉的厉害，幸好没时间照镜子不然每天都要被自己丑哭＝＝</br>  </p>
+
+<p>&nbsp; &nbsp;&nbsp; &nbsp;  流水账一样的记了很多，可以开始鸡汤了。</br>  </p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; 现在成绩还没出来，也许我考不上，但我并不后悔这几个月的时间。人生有很多时间在长大，但是真正成长的时间寥寥无几。考研带给我最大的改变就是不像以前那么浮躁了，可以一个人待在图书馆安静看一天书，可以出门不带手机，可以轻松的远离社交平台，虽然害怕孤单但可以忍受孤单。还有就是这几个月改正了我大学前三年惨不忍睹的学习习惯，实在太贪玩，浪费了太多的时间。希望从现在开始好好努力还不算太晚。</br>  </p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; 现在是2016年的开头，希望这一年结束的时候我还能保持这种积极向上的心态。再回过头来看这篇博客还能够回想起这时候的心情。加油吧徐小婷同学。  </p>
 
             ]]>
         </content>
