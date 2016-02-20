@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-Tags | Xtt's Blog
+css定位机制 | Xtt's Blog
 </title>
   <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.4.2/css/amazeui.min.css">
   <link rel="stylesheet" href="http://xuting.me/static/css/style.css?v=b281f0b0e1e87644ea2fd9f21d40f1b3" type="text/css" />
@@ -45,48 +45,113 @@ Tags | Xtt's Blog
         <div class="am-u-md-9">
         
 <article class="post-main" id="post-font">
-<h1> ●ω●  [6] Tags：</h1>
-<table class="am-table">
-  <tbody>
+  <header class="blog-header">
+    <span class="round-date">
+      <span class="month">02月</span>
+      <span class="day">19</span>
+    </span>
+    <p class="blog-title">css定位机制</p>
+    <p class="blog-meta">
+      <i class="am-icon-calendar"></i> Published at Feb 19, 2016 • 
+      <!--<i class="am-icon-binoculars"></i> 87 次围观 • -->
+      <!--<i class="am-icon-bookmark"></i> 0条评论-->
+      
+        <a class="am-badge am-badge-primary am-radius" href="http://xuting.me/tag/css/">css</a>
+      
+    </p>
+
+  </header>
+  <section class="blog-content">
+    <blockquote>
+<p>每次用div＋css布局的时候都混乱的不行，所以决定仔细梳理一遍，加强理解和记忆<sup><sup>。</sup></sup>  </p>
+</blockquote>
+
+<h3>一.文档流是什么？</h3>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;CSS 有三种基本的定位机制：普通流、浮动和绝对定位。除非专门指定，否则所有框都在普通流中定位。块级框从上到下一个接一个地排列，框之间的垂直距离是由框的垂直外边距计算出来。行内框在一行中水平布置。可以使用水平内边距、边框和外边距调整它们的间距。但是，垂直内边距、边框和外边距不影响行内框的高度。<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;“文档“”就是网页的页面，doctype；“流”就是指页面上的元素输入输出的形式和顺序，其中“输入”是布局，输出是“显示”；综合起来就是：页面布局＋显示的形式。<br>  </p>
+
+<h3>二.position详解</h3>
+
+<blockquote>
+<p>在css中，通过position属性，配合top,right,left,buttom对元素进行定位。<br><br/>
+position属性有：static，relative，absolute，fixed,下面来详细分析：  </p>
+</blockquote>
+
+<h4>1.默认定位：static</h4>
+
+<blockquote>
+<p>块元素相对于浏览器布局，一行一个，自动换行。  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/static.png" alt="static" width="400px" height="450px"/>  </p>
+
+<blockquote>
+<p>显示结果：  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/static1.png" alt="static" width="300px" height="240px"/>  </p>
+
+<h4>2.相对定位：relative</h4>
+
+<blockquote>
+<p>相对定位就应该是相对于一个东西来定位，而这个东西就是元素自己本身，用left right top b0ttom进行定位后，元素会根据原来的位置进行移动，但由于position:relative这个属性并没有脱离文档流的，所以元素本身所占的位置会保留。  </p>
+</blockquote>
+
+<ul>
+<li> 现在我给第二个块加上一个样式：<br/></li>
+</ul>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/relative.png" alt="static" width="250px" height="120px"/>  </p>
+
+<blockquote>
+<p>显示结果：<br/>
+块二通过position:relative相对于原来的位置左移50px; 上移20px得到的，而且块三并没有因为块二的上移而上移，原因就是position:relative这个属性是没有脱离文档流的，所以元素本身所占的位置会保留。  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/relative1.png" alt="static" width="300px" height="200px"/>  </p>
+
+<h4>3.绝对定位：absolute</h4>
+
+<blockquote>
+<p>所谓绝对定位，其实也是相对于某个东西来绝对定位，而这个东西就是靠元素的最近的一个有position，且positon不能为static的祖先元素，一般来说是position为relative的父级元素，如果没有，则相对于body定位；值得注意的是position:absolute这个属性是脱离文档流的，所以重新定位后元素是不会占着原来的位置的，从原来的文档中分离被孤立了出来。  </p>
+</blockquote>
+
+<ul>
+<li>现在我再修改一下代码，将dad父元素的position设置为relative，块二的position设置为absolute：<br/></li>
+</ul>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/absolute.png" alt="static" width="400px" height="500px"/>  </p>
+
+<blockquote>
+<p>显示结果：块二相对于dad块下边界20px，相对于dad块左边界50px；而块三向上移动占据了本来属于块二的位置，原因在于position:absolute这个属性是脱离文档流的，所以重新定位后元素是不会占着原来的位置的，从原来的文档中分离被孤立了出来。  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/absolute1.png" alt="static" width="300px" height="300px"/>  </p>
+
+<h4>4.固定定位：fixed</h4>
+
+<blockquote>
+<p>元素框的表现类似于将 position 设置为 absolute，不过其包含块是视窗本身,它的位置始终相对于窗口，可以实现固定导航栏的效果.  </p>
+</blockquote>
+
+  </section>
+  
     
-    <tr>
-      
-      <td class="am-success"><a href="http://xuting.me/tag/life/">life</a></td>
-      
-      <td class="am-success"><a href="http://xuting.me/tag/dnspod/">dnspod</a></td>
-      
-      <td class="am-success"><a href="http://xuting.me/tag/dom事件/">dom事件</a></td>
-      
-      <td class="am-success"><a href="http://xuting.me/tag/catsup/">catsup</a></td>
-      
-      <td class="am-success"><a href="http://xuting.me/tag/regularExpression/">regularExpression</a></td>
-      
-      <td class="am-success"><a href="http://xuting.me/tag/css/">css</a></td>
-      
-    </tr>
+        
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+				var disqus_title = "";
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = 'http://evaxtt.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+        
+        
     
-    <tr>
-      
-    </tr>
-    
-    <tr>
-      
-    </tr>
-    
-    <tr>
-      
-    </tr>
-    
-    <tr>
-      
-    </tr>
-    
-    <tr>
-      
-    </tr>
-    
-  </tbody>
-</table>
+
 </article>
 
         </div>

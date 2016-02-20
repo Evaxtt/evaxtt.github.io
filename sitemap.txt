@@ -1,3 +1,4 @@
+http://xuting.me/css_position/
 http://xuting.me/domEvent/
 http://xuting.me/RegularExpression/
 http://xuting.me/dnspod/
@@ -5,10 +6,11 @@ http://xuting.me/kaoyan/
 http://xuting.me/catsup_for_blog/
 http://xuting.me/AboutMe/
 http://xuting.me/tag/life/
-http://xuting.me/tag/regularExpression/
 http://xuting.me/tag/dnspod/
-http://xuting.me/tag/catsup/
 http://xuting.me/tag/dom事件/
+http://xuting.me/tag/catsup/
+http://xuting.me/tag/regularExpression/
+http://xuting.me/tag/css/
 http://xuting.me/tag/index.html
 http://xuting.me/archive/2016/
 http://xuting.me/archive/index.html

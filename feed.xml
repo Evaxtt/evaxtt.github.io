@@ -3,8 +3,94 @@
     <title>Xtt's Blog</title>
     <link href="" rel="self" />
     <link href="http://xuting.me/" />
-    <updated>2016-01-19T17:30:00Z</updated>
+    <updated>2016-02-19T14:00:00Z</updated>
     <id>http://xuting.me/</id>
+    
+    <entry>
+        <title><![CDATA[css定位机制]]></title>
+        <author><name>xtt</name><uri>http://xuting.me/</uri></author>
+        <link href="http://xuting.me/css_position/"/>
+        <updated>2016-02-19T14:00:00Z</updated>
+        <published>2016-02-19T14:00:00Z</published>
+        <id>http://xuting.me/css_position/</id>
+        <content type="html">
+            <![CDATA[
+             <blockquote>
+<p>每次用div＋css布局的时候都混乱的不行，所以决定仔细梳理一遍，加强理解和记忆<sup><sup>。</sup></sup>  </p>
+</blockquote>
+
+<h3>一.文档流是什么？</h3>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;CSS 有三种基本的定位机制：普通流、浮动和绝对定位。除非专门指定，否则所有框都在普通流中定位。块级框从上到下一个接一个地排列，框之间的垂直距离是由框的垂直外边距计算出来。行内框在一行中水平布置。可以使用水平内边距、边框和外边距调整它们的间距。但是，垂直内边距、边框和外边距不影响行内框的高度。<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;“文档“”就是网页的页面，doctype；“流”就是指页面上的元素输入输出的形式和顺序，其中“输入”是布局，输出是“显示”；综合起来就是：页面布局＋显示的形式。<br>  </p>
+
+<h3>二.position详解</h3>
+
+<blockquote>
+<p>在css中，通过position属性，配合top,right,left,buttom对元素进行定位。<br><br/>
+position属性有：static，relative，absolute，fixed,下面来详细分析：  </p>
+</blockquote>
+
+<h4>1.默认定位：static</h4>
+
+<blockquote>
+<p>块元素相对于浏览器布局，一行一个，自动换行。  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/static.png" alt="static" width="400px" height="450px"/>  </p>
+
+<blockquote>
+<p>显示结果：  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/static1.png" alt="static" width="300px" height="240px"/>  </p>
+
+<h4>2.相对定位：relative</h4>
+
+<blockquote>
+<p>相对定位就应该是相对于一个东西来定位，而这个东西就是元素自己本身，用left right top b0ttom进行定位后，元素会根据原来的位置进行移动，但由于position:relative这个属性并没有脱离文档流的，所以元素本身所占的位置会保留。  </p>
+</blockquote>
+
+<ul>
+<li> 现在我给第二个块加上一个样式：<br/></li>
+</ul>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/relative.png" alt="static" width="250px" height="120px"/>  </p>
+
+<blockquote>
+<p>显示结果：<br/>
+块二通过position:relative相对于原来的位置左移50px; 上移20px得到的，而且块三并没有因为块二的上移而上移，原因就是position:relative这个属性是没有脱离文档流的，所以元素本身所占的位置会保留。  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/relative1.png" alt="static" width="300px" height="200px"/>  </p>
+
+<h4>3.绝对定位：absolute</h4>
+
+<blockquote>
+<p>所谓绝对定位，其实也是相对于某个东西来绝对定位，而这个东西就是靠元素的最近的一个有position，且positon不能为static的祖先元素，一般来说是position为relative的父级元素，如果没有，则相对于body定位；值得注意的是position:absolute这个属性是脱离文档流的，所以重新定位后元素是不会占着原来的位置的，从原来的文档中分离被孤立了出来。  </p>
+</blockquote>
+
+<ul>
+<li>现在我再修改一下代码，将dad父元素的position设置为relative，块二的position设置为absolute：<br/></li>
+</ul>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/absolute.png" alt="static" width="400px" height="500px"/>  </p>
+
+<blockquote>
+<p>显示结果：块二相对于dad块下边界20px，相对于dad块左边界50px；而块三向上移动占据了本来属于块二的位置，原因在于position:absolute这个属性是脱离文档流的，所以重新定位后元素是不会占着原来的位置的，从原来的文档中分离被孤立了出来。  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/absolute1.png" alt="static" width="300px" height="300px"/>  </p>
+
+<h4>4.固定定位：fixed</h4>
+
+<blockquote>
+<p>元素框的表现类似于将 position 设置为 absolute，不过其包含块是视窗本身,它的位置始终相对于窗口，可以实现固定导航栏的效果.  </p>
+</blockquote>
+
+            ]]>
+        </content>
+    </entry>
     
     <entry>
         <title><![CDATA[Dom事件探秘]]></title>
@@ -542,162 +628,6 @@ Regexper：<a href="http://www.regexper.com/">http://www.regexper.com/</a></br> 
 <p>&nbsp; &nbsp; &nbsp; &nbsp; 现在成绩还没出来，也许我考不上，但我并不后悔这几个月的时间。人生有很多时间在长大，但是真正成长的时间寥寥无几。考研带给我最大的改变就是不像以前那么浮躁了，可以一个人待在图书馆安静看一天书，可以出门不带手机，可以轻松的远离社交平台，虽然害怕孤单但可以忍受孤单。还有就是这几个月改正了我大学前三年惨不忍睹的学习习惯，实在太贪玩，浪费了太多的时间。希望从现在开始好好努力还不算太晚。</br>  </p>
 
 <p>&nbsp; &nbsp; &nbsp; &nbsp; 现在是2016年的开头，希望这一年结束的时候我还能保持这种积极向上的心态。再回过头来看这篇博客还能够回想起这时候的心情。加油吧徐小婷同学。  </p>
-
-            ]]>
-        </content>
-    </entry>
-    
-    <entry>
-        <title><![CDATA[使用catsup快速建立个人博客]]></title>
-        <author><name>xtt</name><uri>http://xuting.me/</uri></author>
-        <link href="http://xuting.me/catsup_for_blog/"/>
-        <updated>2016-01-02T20:30:00Z</updated>
-        <published>2016-01-02T20:30:00Z</published>
-        <id>http://xuting.me/catsup_for_blog/</id>
-        <content type="html">
-            <![CDATA[
-             <h3>一.安装</h3>
-
-<p>1.使用pip安装catsup：(sudo) pip install catsup<br/>
-  从旧版本升级到新版本：(sudo) pip install catsup —upgrade  </p>
-
-<p>2.用git安装catsup：  </p>
-
-<pre><code>$git clone git://github.com/whtsky/catsup.git  
-$cd catsup  
-# 当前使用git submodule 来管理主题（当前版本是 sealscript,主题可以自由更换 ）  
-$git submodule init  
-$git submodule update  
-$python setup.py install</code></pre>
-
-<h3>二.快速建站</h3>
-
-<p>1.建立新站点</br>  </p>
-
-<p>安装完catsup之后根目录下会出现一个目录 catsup，进入catsup目录  </p>
-
-<pre><code>$cd catsup  
-$mkdir site  
-$cd site  
-$catsup init</code></pre>
-
-<p>接着site目录下会自动穿件配置文件 config.json 和一个空白的文章目录posts  </p>
-
-<p>2.配置新站点  </p>
-
-<pre><code>$ vim config.json</code></pre>
-
-<ul>
-<li>insert键进入编辑模式，Mac电脑 i 键进入编辑模式；<br/></li>
-<li>修改完成esc退出编辑模式，:q! 直接退出 |  :wq 保存后退出（具体vim的使用方法可百度）<br/></li>
-<li>site.name : 站点的名字<br/></li>
-<li>site.description : 站点的描述<br/></li>
-<li>site.url : 站点的 URL 。比如 <a href="http://example.com">http://example.com</a><br/></li>
-<li>author.name : 你的名字<br/></li>
-</ul>
-
-<p>3.创建文章  </p>
-
-<pre><code>$cd posts  
-$vim helloworld.md</code></pre>
-
-<p><strong>一个名为 Hello World 文章应该是这样的(格式要严格遵守)</strong>  </p>
-
-<pre><code># Hello world(文章标题)  
-－ time：2016-01-02 20:30  
-－ tags：hello world  
-
----  
-
-文章内容（具体markdown的书写语法参照：http://www.appinn.com/markdown/index.html）</code></pre>
-
-<p>然后，写一个独立页面来介绍你的站点  </p>
-
-<pre><code>$vim posts/about.md</code></pre>
-
-<p><strong>一个「关于」页面应该是这样的（严格遵守格式）</strong>  </p>
-
-<pre><code># 名字  
-
-－ time：2016-01-02 21:00  
-－type：page  
-
----  
-具体介绍内容</code></pre>
-
-<p>4.生成站点  </p>
-
-<pre><code>$catsup server（预览，打开浏览器http://127.0.0.1:8888 .）  
-$catsup build（生成站点）</code></pre>
-
-<p>站点生成成功后，site的文件里会多一个 deploy文件  </p>
-
-<pre><code>$ls  
-config.json deploy posts</code></pre>
-
-<h3>三.部署站点</h3>
-
-<p>1.首先你要有一个Github账号，如果没有请去创建一个（<a href="https://github.com），">https://github.com），</a><br/>
-然后配置ssh,详情参看教程：<a href="http://blog.csdn.net/keyboardota/article/details/7603630,（已经有Github并且配置过ssh可忽略这两步）">http://blog.csdn.net/keyboardota/article/details/7603630,（已经有Github并且配置过ssh可忽略这两步）</a><br/>
- 最后要在Github里面新建一个repository,如下：<br/>
- <img src="http://7xpt78.com1.z0.glb.clouddn.com/%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93.png" alt="创建仓库"/>  </p>
-
-<p>2.然后修改本机site目录下的配置文件deploy  </p>
-
-<pre><code>$vim config.json</code></pre>
-
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/%E9%85%8D%E7%BD%AE.png" alt="修改配置"/>  </p>
-
-<p>在这之后可以预览站点  </p>
-
-<pre><code>$catsup server  
-然后在浏览器输入 http://127.0.0.1:8888即可预览新站点</code></pre>
-
-<p>最后把站点部署到 GitHub Pages 上  </p>
-
-<pre><code>$catsup build &amp;&amp; catsup deploy(以后每一次修改配置提交到要执行这步)</code></pre>
-
-<p>3.在浏览器上打开http://your_github_name.github.io 可以看到你的新站点  </p>
-
-<hr/>
-
-<h3>后记</h3>
-
-<p>1.修改主题：</br>  </p>
-
-<ul>
-<li>第一步：可以自己写一个主题或者Github上克隆大神们已经写好的主题；<br/></li>
-<li><p>第二步：修改配置文件  </p>
-
-<pre><code>$cd site  
-$vim config.json  
-然后将theme下的&quot;name&quot;修改为你的主题名称，然后重新提交部署站点  
-$catsup build &amp;&amp; catsup deploy</code></pre></li>
-</ul>
-
-<p>2.设置评论平台： (多说或者dispus等等)</br><br/>
-以dispus为例（大多数情况下需要翻墙）：</br>  </p>
-
-<ul>
-<li>第一步：dispus官网注册一个账号（<a href="https://disqus.com/）">https://disqus.com/）</a><br/></li>
-<li>第二步：点击settings下的Add dispus to site，<br/></li>
-</ul>
-
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/dispus.png" alt="配置dispus"/>  </p>
-
-<ul>
-<li><p>第三步，回到本地site目录修改配置文件，  </p>
-
-<pre><code>$vim config.json  
-修改comment部分如下：</code></pre>
-
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/comment.png" alt="修改配置"/>  </p></li>
-<li><p>第四步：重新提交部署站点：  </p>
-
-<pre><code>$catsup build &amp;&amp; catsup deploy</code></pre>
-
-<p>3.还有就是好好充实博客内容啦噜＋＋  </p></li>
-</ul>
 
             ]]>
         </content>
