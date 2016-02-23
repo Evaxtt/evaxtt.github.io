@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-css | Xtt's Blog
+关于浮动与清除浮动 | Xtt's Blog
 </title>
   <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.4.2/css/amazeui.min.css">
   <link rel="stylesheet" href="http://xuting.me/static/css/style.css?v=b281f0b0e1e87644ea2fd9f21d40f1b3" type="text/css" />
@@ -44,66 +44,125 @@ css | Xtt's Blog
       <div class="am-g am-g-fixed blog-g-fixed">
         <div class="am-u-md-9">
         
-<h1>css 标签下的文章</h1>
-<!-- blog list -->
-<div class="blog-list">
-  <!--样本 开始-->
-  
-  <article class="blog-main">
+<article class="post-main" id="post-font">
+  <header class="blog-header">
     <span class="round-date">
       <span class="month">02月</span>
       <span class="day">23</span>
     </span>
-    <header class="blog-header">
-      <p class="blog-title">
-        <a href="http://xuting.me/css_float/">关于浮动与清除浮动</a>
-      </p>
-      <p class="blog-meta">
-        <i class="am-icon-calendar"></i> 发表于 Feb 23, 2016 • 
-        <!--<i class="am-icon-binoculars"></i> 87 次围观 • -->
-        <!--<i class="am-icon-bookmark"></i> 0条评论-->
-        
+    <p class="blog-title">关于浮动与清除浮动</p>
+    <p class="blog-meta">
+      <i class="am-icon-calendar"></i> Published at Feb 23, 2016 • 
+      <!--<i class="am-icon-binoculars"></i> 87 次围观 • -->
+      <!--<i class="am-icon-bookmark"></i> 0条评论-->
+      
         <a class="am-badge am-badge-primary am-radius" href="http://xuting.me/tag/css/">css</a>
-        
-      </p>
-    </header>
-    <section class="blog-content">
-      <blockquote>
-<p>在css布局中常用的一个属性就是float，它可以让div块脱离原本的文档流向左或向右浮动，但是&hellip;这个浮动有时候很烦，需要清除浮动，下面详细整理一下关于浮
-    </section>
-    <a class="am-badge am-badge-secondary am-radius blog-content-more" href="http://xuting.me/css_float/">阅读全文</a>
-  </article>
-  
-  <article class="blog-main">
-    <span class="round-date">
-      <span class="month">02月</span>
-      <span class="day">19</span>
-    </span>
-    <header class="blog-header">
-      <p class="blog-title">
-        <a href="http://xuting.me/css_position/">css定位机制</a>
-      </p>
-      <p class="blog-meta">
-        <i class="am-icon-calendar"></i> 发表于 Feb 19, 2016 • 
-        <!--<i class="am-icon-binoculars"></i> 87 次围观 • -->
-        <!--<i class="am-icon-bookmark"></i> 0条评论-->
-        
-        <a class="am-badge am-badge-primary am-radius" href="http://xuting.me/tag/css/">css</a>
-        
-      </p>
-    </header>
-    <section class="blog-content">
-      <blockquote>
-<p>每次用div＋css布局的时候都混乱的不行，所以决定仔细梳理一遍，加强理解和记忆<sup><sup>。</sup></sup>  </p>
+      
+    </p>
+
+  </header>
+  <section class="blog-content">
+    <blockquote>
+<p>在css布局中常用的一个属性就是float，它可以让div块脱离原本的文档流向左或向右浮动，但是&hellip;这个浮动有时候很烦，需要清除浮动，下面详细整理一下关于浮动，为什么要清除浮动和怎样清除浮动。  </p>
 </blockquote>
 
-    </section>
-    <a class="am-badge am-badge-secondary am-radius blog-content-more" href="http://xuting.me/css_position/">阅读全文</a>
-  </article>
+<h3>一. float</h3>
+
+<blockquote>
+<p>float浮动样式没有靠中（浮动居中）的样式，在css布局中如果需要让标签对象居中需要margin等其它方法（先偷懒下次整理(●°u°●)​ ），这里记住浮动靠右使用float:right，浮动靠左使用float:left样式即可。例子到下面一起举。  </p>
+</blockquote>
+
+<h3>二.为什么要清除浮动？</h3>
+
+<blockquote>
+<p>div嵌套式子元素浮动而父元素未浮动<br><br/>
+后果：因为float会脱离文档流，这样就导致了父元素的height为0.  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float1.png">  </p>
+
+<blockquote>
+<p>此时父元素div的height变为0，只显示了3px的边框：  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float2.png" width="520px">  </p>
+
+<h3>三.如何清除浮动？</h3>
+
+<h4>（第一类）：在元素末尾添加一个内容带有clear：both属性的空元素</h4>
+
+<blockquote>
+<p>1.方法一：使用带clear属性的空元素  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float3.png">  </p>
+
+<blockquote>
+<p>在在浮动元素的下面加了一个clear：both；的属性，然后浮动被清除，父元素的高度被自动填充了：  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float4.png" width="500px">  </p>
+
+<blockquote>
+<p>2.方法二：使用CSS的:after伪元素  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float5.png" width="500px" >  </p>
+
+<blockquote>
+<p>给浮动元素的容器添加一个clearfix的class，然后给这个class添加一个:after伪元素实现元素末尾添加一个看不见的块元素（Block element）清理浮动。需要注意的是为了IE6和IE7浏览器，要添加一条zoom:1;触发haslayout。  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float6.png" width="500px">  </p>
+
+<h4>(第二类)：触发浮动元素父元素的 BFC (Block Formatting Contexts, 块级格式化上下文)，使到该父元素可以包含浮动元素</h4>
+
+<blockquote>
+<p>3.方法三：使用CSS的overflow属性  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float7.png">  </p>
+
+<blockquote>
+<p>给浮动元素的容器添加overflow:hidden;或overflow:auto;可以清除浮动，另外在 IE6 中还需要触发 hasLayout ，例如为父元素设置容器宽高或设置 zoom:1。  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float4.png" width="500px">  </p>
+
+<blockquote>
+<p>4.方法四：给浮动的元素的容器添加浮动(但是这样会使其整体浮动，影响布局，不推荐使用. )  </p>
+</blockquote>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float8.png">  </p>
+
+<blockquote>
+<p>显示结果与方法三相同就不再列出。  </p>
+</blockquote>
+
+<h4>四.后记</h4>
+
+<blockquote>
+<p>网上推荐说在网页主要布局时使用:after伪元素方法并作为主要清理浮动方式；在小模块如ul里使用overflow:hidden;如果本身就是浮动元素则可自动清除内部浮动，无需格外处理；正文中使用邻接元素清理之前的浮动。回顾一下洗洗睡觉(●°u°●)​ 」  </p>
+</blockquote>
+
+  </section>
   
-  <!--样本 结束-->
-</div>
-<!-- blog list -->
+    
+        
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+				var disqus_title = "";
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = 'http://evaxtt.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+        
+        
+    
+
+</article>
 
         </div>
 
