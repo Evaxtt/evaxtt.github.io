@@ -88,7 +88,7 @@ Dom事件探秘 | Xtt's Blog
 
 <h4>2.Dom0级事件处理程序</h4>
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;方法：函数赋值 element.onclick=function()  </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;方法：函数赋值 element.onclick=function()（只能为一个元素添加一个事件处理函数）  </p>
 
 <pre><code>var btn2=document.getElementById(&#39;btn2&#39;);  
  btn2.onclick=function(){  
@@ -113,7 +113,7 @@ Dom事件探秘 | Xtt's Blog
 
 <ul>
 <li>element.attachEvent()：添加事件<br/></li>
-<li>element.attachEvent()：删除事件<br/></li>
+<li>element.detachEvent()：删除事件<br/></li>
 <li>接受两个参数：要处理的事件类型type（要加on）和事件处理程序函数，不使用布尔值是因为IE8及更早的版本只支持实事件冒泡（语法注意： .等价于［］）<br/></li>
 </ul>
 
