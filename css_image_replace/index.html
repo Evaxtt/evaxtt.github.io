@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>
+css之图像替换 | Xtt's Blog
+</title>
+  <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.4.2/css/amazeui.min.css">
+  <link rel="stylesheet" href="http://xuting.me/static/css/style.css?v=b281f0b0e1e87644ea2fd9f21d40f1b3" type="text/css" />
+  <link rel="stylesheet" href="http://xuting.me/static/css/pygments_style.css?v=f52807bdba7d67ebabc3ce287f67bf67" type="text/css" />
+
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?7a7d4c2736963f63925bf3b3091085c4";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- header-->
+    <header class="header-wrapper">
+      <div class="header-container">
+        <nav>
+          <ul class="header-nav">
+            <li><a href="http://xuting.me/"><span class="am-icon-sm am-icon-home" id="nav-icon"></span>Home</a></li>
+            <!--<li><a href="http://xuting.me/Board/"><span class="am-icon-sm am-icon-heart" id="nav-icon"></span>Board</a></li>-->
+            <li><a href="http://xuting.me/archive/index.html"><span class="am-icon-sm am-icon-archive" id="nav-icon"></span>Archives</a></li>
+            <li><a href="http://xuting.me/AboutMe/"><span class="am-icon-sm am-icon-user-secret" id="nav-icon"></span>AboutMe</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- header -->
+
+    <!-- conetent -->
+    <div class="content-wrapper">
+      <div class="am-g am-g-fixed blog-g-fixed">
+        <div class="am-u-md-9">
+        
+<article class="post-main" id="post-font">
+  <header class="blog-header">
+    <span class="round-date">
+      <span class="month">03月</span>
+      <span class="day">30</span>
+    </span>
+    <p class="blog-title">css之图像替换</p>
+    <p class="blog-meta">
+      <i class="am-icon-calendar"></i> Published at Mar 30, 2016 • 
+      <!--<i class="am-icon-binoculars"></i> 87 次围观 • -->
+      <!--<i class="am-icon-bookmark"></i> 0条评论-->
+      
+        <a class="am-badge am-badge-primary am-radius" href="http://xuting.me/tag//"></a>
+      
+    </p>
+
+  </header>
+  <section class="blog-content">
+    <h3>一.概念</h3>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;图像替代，就是像我们在平时将文本添加到文本中，然后通过css隐藏文本在它的位置上显示一个背景图片，这样，搜索引擎仍然可以搜到HTML文本，即使我们禁用css后，文本时仍然是可以显示的。<br><br/>
+引用《精通css》中的一段解释：  </p>
+
+<blockquote>
+<p>HTML文本由很多的优点。文本可以被搜索引擎读取，开发人员可以对其进行复制和粘贴，并且在浏览器中改变字体大小后，它也会改变。因此很多设计人员都想尽量的采用HTML文本而不是文本的图像，但是遗憾的是，页面设计人员对于文本有有限的选择，尽管可以通过css来控制版面但是有很多字体的效果是无法实现的，所以在某些情况下还是需要用文本的图像的。 图像替代，就是像我们在平时将文本添加到文本中，然后通过css隐藏文本在它的位置上显示一个背景图片，这样，搜索引擎仍然可以搜到HTML文本，即使我们禁用css后，文本时仍然是可以显示的。  </p>
+</blockquote>
+
+<p>引用《CSS禅意花园》中的一段解释：  </p>
+
+<blockquote>
+<p>图像替换技术使用display:none的本意并不只是想要替换文本，这样做还有一些更深层次的理由。实际上，若是没有任何提示或帮助，计算机就无法认出或读取图像中包含的文字。例如HTML中img元素，若是没有了alt属性，那么对于google等搜索引擎，以及辅助浏览设备（例如，屏幕阅读器即可阅读页面内容，并以声音的形式告诉浏览者）之类无法呈现图像的客户端来说，将变的豪无意义。而图像替换技术则保留了被替换元素中的原有文本，因此无论对任何客户而言，理解页面内容都不成问题。  </p>
+</blockquote>
+
+<h3>二.图像替换实现方法</h3>
+
+<h4>1.经典FIR，设法隐藏文字内容：（Fahrner Image Replacement）</h4>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;最早开始流行的图像替换技术，也最容易理解，但是存在一些可访问性问题所依应该避免使用。<br>  </p>
+
+<p>(1)把要替换的文本放在span标签中:<br>  </p>
+
+<blockquote>
+<p>&lt;h2&gt;<br/>
+  &lt;span&gt;Hello World &lt;span&gt;<br/>
+&lt;/h2&gt;  </p>
+</blockquote>
+
+<p>(2)然后将替换图像作为背景应用于文本元素,<br>  </p>
+
+<blockquote>
+<p>h2{<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;background:url(替换图片.gif) no-repeat;<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;width: 150px;<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;height: 35px;<br><br/>
+}  </p>
+</blockquote>
+
+<p>(3)将span的display设置为none，从而隐藏span的内容。<br>  </p>
+
+<blockquote>
+<p>span{<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;display:none;<br><br/>
+}  </p>
+</blockquote>
+
+<p>存在问题：  </p>
+
+<blockquote>
+<p>许多流行的屏幕阅读器会忽略那些display：none和visibility：hidden的元素，因为会完全忽略这个文本，造成严重的访问问题。  </p>
+</blockquote>
+
+<h4>2.设置边距或缩进将文字弹走：Phark</h4>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 不需要添加无语义的标签，也不需要使用display属性来隐藏文本，只需要对需要替换的文字进行非常大的负值首行所进。  </p>
+
+<blockquote>
+<p>&lt;h2&gt;<br/>
+  Hello World<br/>
+&lt;/h2&gt;<br><br/>
+ h2{<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;width: 150px;<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;height: 35px;<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;text-indent:-5000px;(非常大的负值首行所进)<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;background:url(替换图片.gif) no-repeat;<br><br/>
+}  </p>
+</blockquote>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;这个方法很好的解决了屏幕阅读器的问题，但是在关闭图像仍然打开css的情况下是无效的，虽然这种情况比较小，在网速访问非常慢的情况下或者访问者能够打开图像但是设置不打开，这些情况下一些人是看不到被替换的文本的。  </p>
+
+<h4>3.Leahy和Langridge方法</h4>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;该方法不必再添加那些多余的<span>标签，且在保证屏幕阅读器可以正常阅读文本的同时，也能在页面中隐藏元素中的内容。但是并没有解决浏览器禁用图象后空白页面的可访问性问题。  </p>
+
+<blockquote>
+<p>&lt;h2&gt;<br/>
+  Hello World<br/>
+&lt;/h2&gt;<br><br/>
+ h2{<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;height:0;<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;padding:30px 0 0 0;<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;overflow:hidden;<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;background:url(替换图片.gif) no-repeat;<br><br/>
+}  </p>
+</blockquote>
+
+<h4>4.用额外元素覆盖住文字：Levin方法</h4>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Levin Alexander想出了一个绝妙的注意：不再将文本置放于span中，而是将其从span中移出来，将文本和span一起放在父元素中，然后使用这个空白的span覆盖文本，并将背景图像应用到span之上。繁琐的代码下，终于完美的解决了关闭图像打开CSS问题，但新的问题也随之出现，那就是图像不能是透明的，否则用户将会看到下面的文本。除此之外，文字内容没有被直接包含于任何节点之内，可能会给前端开发带来意想不到的麻烦。  </p>
+
+<blockquote>
+<p>&lt;h3 class=&ldquo;replace&rdquo; id=&ldquo;myh1&rdquo;&gt;And a dash of Thyme.&lt;span&gt;&lt;/span&gt;&lt;/h3&gt;  </p>
+
+<p>.replace{<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;position:relative;<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;margin:0;<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;padding:0;<br><br/>
+}<br><br/>
+.replace span{<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;display:block;<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;position:absolute;<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;top:0;<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;left:0;<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;z-index:1;<br><br/>
+}<br><br/>
+/#myh1,#myh1 span{<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;height:25px;<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;width:300px;<br><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;background:url(替换图像.png);<br><br/>
+}<br>  </p>
+</blockquote>
+
+<h4>五.基于flash和javascript：sFIR</h4>
+
+<p>Mike Davidson和Shaun Inman提出了一种新的iFIR技术。该方法使用JavaScript搜索文<br/>
+档中特定节点，将其中的内容替换成一小段Flash。<br><br/>
+引用《精通css》d对这一技术的介绍：  </p>
+
+<blockquote>
+<p>Flash允许将字体嵌入SWF文件，所以他们并不把文本换成图像，而是用Flash文件替换文本。进行这一替换的方法是使用JavaScript搜索文档，找到特定元素或者具有特定类名的元素中的所有文本。然后JavaScript将文本替换为一个小的Flash文件。接下来是真正精明的部分。这种技术并不为每段文本创建单独的Flash文件，而是将被替换的文本放回一个重复的Flash文件中。因此，触发图像替换所要做的只是添加一个类，Flash和JavaScript会完成余下的工作。另一个好处是Flash文件中的文本是可搜索的，这意味着可以轻松地复制它。  </p>
+</blockquote>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;存在问题：使用Flash替代的缺点在于改方法要求JavaScript和Flash支持，并且Flash会远大于一副普通图片，下载时会造成延迟，在较慢的电脑上页面会出现闪烁甚至停滞。  </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;就目前来讲没有最完美的图像替换方法，但是可以用最小的代价换取效果。例如，在移动设备上可以用Levin的方法，因为一般移动设备商不会使用透明图片。而在国内，屏幕阅读器还没普及的情况下，牺牲屏幕阅读器也是可以考虑的。  </p>
+
+  </section>
+  
+    
+        
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+				var disqus_title = "";
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = 'http://evaxtt.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+        
+        
+    
+
+</article>
+
+        </div>
+
+        <div class="sidebar">
+          <div class="am-u-md-3">
+            <!-- about me -->
+            <div class="panel about-me">
+              <div class="about-me-bg"></div>
+              <div class="about-me-content">
+                <a href="http://xuting.me"><img class="avatar" src="http://7xpt78.com1.z0.glb.clouddn.com/tt.jpg"></img></a>
+                <h5 class="about-me-name"><a href="http://xuting.me/AboutMe/"> Evaxtt </a></h5>
+                <p class="about-me-words">9岁技术媛</p>
+                <ul class="about-me-ul">
+                  <li class="about-me-li">
+                    <a class="about-me-li-content" href="http://xuting.me/archive/index.html">
+                      日志
+                      <h5 class="about-me-li-h5">7</h5>
+                    </a>
+                  </li>
+                  <li class="about-me-li">
+                    <a class="about-me-li-content" href="http://xuting.me/tag/index.html">
+                      标签
+                      <h5 class="about-me-li-h5">6</h5>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- about me -->
+            <!-- contact-me -->
+            <div class="contact-me panel-two">
+              <h3 class="panel-title">Follow Me</h5>
+              <div class="contact-me-icons">
+                <a href="https://github.com/Evaxtt" title="Github: Evaxtt" target="_blank"><i class="am-icon-github am-icon-md"></i></a>
+                <!--<a href="https://twitter.com/Eva_studying" title="Twitter: xuting.me" target="_blank"><i class="am-icon-twitter am-icon-md"></i></a>-->
+                <a href="http://weibo.com/u/2946291917?topnav=1&wvr=6&topsug=1&is_all=1" title="Weibo: 一只水饺" target="_blank"><i class="am-icon-weibo am-icon-md"></i></a>
+                <a href="https://www.zhihu.com/people/xu-ting-ting-62-33" title="zhihu" target="_blank"><i class="am-icon-share-alt am-icon-md"></i></a>
+                <!--<a href="douban" title="豆瓣" target="_blank"><i class="am-icon-globe am-icon-md"></i></a>-->
+                </a> 
+              </div>
+            </div>
+            <!-- contact-me-->
+            <!-- email-me -->
+            <div class="panel-two">
+              <h3 class="panel-title">Contact Me</h5>
+              <img src="http://7xpt78.com1.z0.glb.clouddn.com/mail%E5%89%AF%E6%9C%AC.png">
+              <!--<img src="http://7xpt78.com1.z0.glb.clouddn.com/youxiang.gif">-->
+            </div>
+            <!-- email-me-->
+            <!-- recently -->
+            <div class="shuoshuo panel-two">
+              <h5 class="panel-title">博主说说</h5>
+              <div class="shuoshuo-content">
+                心之所向，素履以往；<br>
+                生如逆旅，一苇以航。
+              </div>
+            </div>
+            <!-- recently -->
+            <!-- Linux Cn -->
+            <div class="about-copyright panel-two">
+            ©Powered by<a href="https://github.com/whtsky/Catsup"> Catsup</a>and<a href="https://http://pages.github.com/"> Github Pages </a>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- conetent -->
+  </div>
+</body>
+</html>
