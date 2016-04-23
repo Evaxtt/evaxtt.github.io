@@ -1,4 +1,4 @@
-http://xuting.me/忙碌的毕业季/
+http://xuting.me/graduate/
 http://xuting.me/css_image_replace/
 http://xuting.me/css_float/
 http://xuting.me/css_position/
