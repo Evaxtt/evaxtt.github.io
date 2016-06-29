@@ -1,3 +1,4 @@
+http://xuting.me/end_and_start/
 http://xuting.me/personal_blog/
 http://xuting.me/graduate/
 http://xuting.me/css_image_replace/
@@ -9,8 +10,8 @@ http://xuting.me/dnspod/
 http://xuting.me/kaoyan/
 http://xuting.me/catsup_for_blog/
 http://xuting.me/AboutMe/
-http://xuting.me/tag/css/
 http://xuting.me/tag/life/
+http://xuting.me/tag/css/
 http://xuting.me/tag/dnspod/
 http://xuting.me/tag/catsup/
 http://xuting.me/tag/dom事件/
