@@ -3,8 +3,149 @@
     <title>Xtt's Blog</title>
     <link href="" rel="self" />
     <link href="http://xuting.me/" />
-    <updated>2016-06-29T23:00:00Z</updated>
+    <updated>2016-07-23T13:00:00Z</updated>
     <id>http://xuting.me/</id>
+    
+    <entry>
+        <title><![CDATA[Mac下的sublime text插件下载]]></title>
+        <author><name>xtt</name><uri>http://xuting.me/</uri></author>
+        <link href="http://xuting.me/sublime_text_plug/"/>
+        <updated>2016-07-23T13:00:00Z</updated>
+        <published>2016-07-23T13:00:00Z</published>
+        <id>http://xuting.me/sublime_text_plug/</id>
+        <content type="html">
+            <![CDATA[
+             <blockquote>
+<p>用了Sublime Text有一段时间了，之前被周围的几个前端小伙伴灌输的思想就是，牛b的前端程序员都是手写代码的，用代码提示啥的都low，然而上班之后被公司同事吐槽开发效率太低，因为不想换编辑器所以去下载了几个插件，发现写代码时的幸福感大大提升了  </p>
+</blockquote>
+
+<h3>一.Package Control</h3>
+
+<blockquote>
+<p>这是使用sublime text首先要装的插件，因为这是一个插件包，有了这个之后可以方便的安装、升级、删除其它插件。  </p>
+</blockquote>
+
+<p>1.快速安装：<br/>  </p>
+
+<p>[sublime text2:]<br/><br/>
+使用Ctrl+快捷键或者通过View-&gt;Show Console菜单打开命令行，粘贴如下代码：<br/>  </p>
+
+<pre><code>import urllib.request,os; pf = &#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), &#39;wb&#39;).write(urllib.request.urlopen( &#39;http://sublime.wbond.net/&#39; + pf.replace(&#39; &#39;,&#39;%20&#39;)).read())</code></pre>
+
+<p>[sublime text3:]<br/><br/>
+使用Ctrl+快捷键或者通过View-&gt;Show Console菜单打开命令行，粘贴如下代码：<br/>  </p>
+
+<pre><code>import urllib2,os; pf=&#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), &#39;wb&#39; ).write( urllib2.urlopen( &#39;http://sublime.wbond.net/&#39; +pf.replace( &#39; &#39;,&#39;%20&#39; )).read()); print( &#39;Please restart Sublime Text to finish installation&#39;)</code></pre>
+
+<p>2.手动安装  </p>
+
+<p>如果快速安装不成功的话，下载Package Control插件包手动解压到到插件目：<br/><br/>
+（1）点击Preferences &gt; Browse Packages菜单<br/><br/>
+（2）进入打开的目录的上层目录，然后再进入Installed Packages/目录<br/><br/>
+（3）下载Package Control插件包并复制到Installed Packages/目录<br/><br/>
+（4）重启Sublime Text。<br/>  </p>
+
+<p>3.用Package Control安装插件的方法<br/>
+（1）按下Ctrl+Shift+P调出命令面板<br/>
+（2）输入install 调出 Install Package 选项并回车，然后在列表中选中要安装的插件即可自动下载安装。<br/>
+（3）安装成功后在Preferences &gt;package settings目录下即可看到已经成功安装的插件，可以查看和自定义每个插件绑定的快捷键和参数设置。  </p>
+
+<h3>二.相关插件</h3>
+
+<blockquote>
+<p>安装插件的方法已经介绍完了，下面开始介绍一些有用的Sublime Text插件：  </p>
+</blockquote>
+
+<h4>1.Emmet</h4>
+
+<p>如果你是前端开发者，这个插件会大大的提高编码效率。例如：ul&gt;li*4 按下扩展键则立即生成一个四行的列表。插件文档：<a href="http://emmet.io/">http://emmet.io/</a>  </p>
+
+<h4>2.JsFormat</h4>
+
+<p>一个JS代码格式化插件。  </p>
+
+<h4>3.CSSComb</h4>
+
+<p>这是用来给CSS属性进行排序的格式化插件。如果你想保持的代码干净整洁，并且希望按一定的顺序排列，那么这个插件是一种有效解决的方案。  </p>
+
+<h4>4.DocBlockr</h4>
+
+<p>DocBlockr 可以使你很方便地对代码添加注释。在js的代码里的函数前面输入／＊＊按tab键，它会解析函数，变量，和参数，根据它们自动生成注释规范，你的工作就是去填充对应的说明。  </p>
+
+<h4>5.Side Bar</h4>
+
+<p>侧边栏功能加强插件，可以直接在sublime里面对文件执行很多复杂操作。  </p>
+
+<h4>6.ColorPicker</h4>
+
+<p>通常，如果我们需要一个调色盘的时候，我们习惯使用Photoshop或者其他工具。但是一个完整的选色工具可以直接在你的编辑器中使用- Ctrl/Cmd + Shift + C。  </p>
+
+<h4>7. Colorcoder</h4>
+
+<p>高亮所有变量，因此可以极大的简化代码定位。尤其是对那些有阅读障碍的程序员非常有帮助。  </p>
+
+<h4>8.AutoFileName</h4>
+
+<p>自动补全文件路径&mdash;非非常方便。  </p>
+
+<h4>9.Better Completion</h4>
+
+<p>提供Bootstrap，jQuery,JS,html等代码提示补全，我觉得这个很好用，很多时候会忘记一些函数属性名，有了这些自动提示效率和正确率都会提高很多。<br/><br/>
+这个安装好后需要自行配制，CTRL+SHIFT+P或者 CMD+SHIFT+P之后在弹出的窗口中输入“sbc settings user”打开配置文件，输入下列代码，把需要代码提示的选项参数设置为true：  </p>
+
+<pre><code>{  
+// --------------------  
+// sublime-better-completions-Package (sbc package)  
+// --------------------  
+// API files is contains the *keyword* such as `html`, `jquery`, `myglossary` with lowercase as filename `sbc-api-${filename}.sublime-settings` place in `/packages/User/` (your own) or `/packages/${this-package}/sublime-completions/` (package build-in).  
+// After you enable, disable or added new your own completions, you might need restart your Sublime Text Editor.  
+//  
+// Your own setting file `sbc-setting.sublime-settings` need to place in `/packages/User/` and contains all your api setting property that you want to enable.  
+//  
+// --------------------  
+// APIs Setup  
+// --------------------  
+// `true` means enable it.  
+// `false` means disable it.  
+&quot;completion_active_list&quot;: {  
+    // build-in completions  
+    &quot;css-properties&quot;: false,  
+    &quot;gruntjs-plugins&quot;: false,  
+    &quot;html&quot;: false,  
+    &quot;lodash&quot;: false,  
+    &quot;javascript&quot;: false,  
+    &quot;jquery&quot;: false,  
+    &quot;jquery-sq&quot;: false, // Single Quote  
+    &quot;php&quot;: false,  
+    &quot;phpci&quot;: false,  
+    &quot;sql&quot;: false,  
+    &quot;twitter-bootstrap&quot;: false,  
+    &quot;twitter-bootstrap-less-variables&quot;: false,  
+    &quot;twitter-bootstrap3&quot;: false,  
+    &quot;underscorejs&quot;: false,  
+    // Your own completions?  
+    // ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/sbc-api-my-angularjs.sublime-settings  
+    &quot;my-angularjs&quot;: false,  
+    // ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/sbc-api-my-glossary.sublime-settings  
+    &quot;my-glossary&quot;: false,  
+    // ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/sbc-api-my-html.sublime-settings  
+    &quot;my-html&quot;: false,  
+    // ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/sbc-api-my-javascript.sublime-settings  
+    &quot;my-javascript&quot;: false  
+}  
+}</code></pre>
+
+<h4>10.MarkdownEditing</h4>
+
+<p>Markdonw编辑提供语法高亮，缩略词，自动补全，配色方案。  </p>
+
+<h4>11.SublimeREPL</h4>
+
+<p>SublimeREPL 可以直接在编辑器中运行一个解释器，支持很多语言：Clojure, CoffeeScript, F#, Groovy, Haskell, Lua, MozRepl, NodeJS, Python, R, Ruby, Scala, shell.使用说明文档：<a href="http://sublimerepl.readthedocs.io/en/latest/">http://sublimerepl.readthedocs.io/en/latest/</a></p>
+
+            ]]>
+        </content>
+    </entry>
     
     <entry>
         <title><![CDATA[是结束也是开始]]></title>
@@ -316,102 +457,6 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;存在问题：使用Flash替代的缺点在于改方法要求JavaScript和Flash支持，并且Flash会远大于一副普通图片，下载时会造成延迟，在较慢的电脑上页面会出现闪烁甚至停滞。  </p>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;就目前来讲没有最完美的图像替换方法，但是可以用最小的代价换取效果。例如，在移动设备上可以用Levin的方法，因为一般移动设备商不会使用透明图片。而在国内，屏幕阅读器还没普及的情况下，牺牲屏幕阅读器也是可以考虑的。  </p>
-
-            ]]>
-        </content>
-    </entry>
-    
-    <entry>
-        <title><![CDATA[关于浮动与清除浮动]]></title>
-        <author><name>xtt</name><uri>http://xuting.me/</uri></author>
-        <link href="http://xuting.me/css_float/"/>
-        <updated>2016-02-23T21:00:00Z</updated>
-        <published>2016-02-23T21:00:00Z</published>
-        <id>http://xuting.me/css_float/</id>
-        <content type="html">
-            <![CDATA[
-             <blockquote>
-<p>在css布局中常用的一个属性就是float，它可以让div块脱离原本的文档流向左或向右浮动，但是&hellip;这个浮动有时候很烦，需要清除浮动，下面详细整理一下关于浮动，为什么要清除浮动和怎样清除浮动。  </p>
-</blockquote>
-
-<h3>一. float</h3>
-
-<blockquote>
-<p>float浮动样式没有靠中（浮动居中）的样式，在css布局中如果需要让标签对象居中需要margin等其它方法（先偷懒下次整理(●°u°●)​ ），这里记住浮动靠右使用float:right，浮动靠左使用float:left样式即可。例子到下面一起举。  </p>
-</blockquote>
-
-<h3>二.为什么要清除浮动？</h3>
-
-<blockquote>
-<p>div嵌套式子元素浮动而父元素未浮动<br><br/>
-后果：因为float会脱离文档流，这样就导致了父元素的height为0.  </p>
-</blockquote>
-
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float1.png">  </p>
-
-<blockquote>
-<p>此时父元素div的height变为0，只显示了3px的边框：  </p>
-</blockquote>
-
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float2.png" width="520px">  </p>
-
-<h3>三.如何清除浮动？</h3>
-
-<h4>（第一类）：在元素末尾添加一个内容带有clear：both属性的空元素</h4>
-
-<blockquote>
-<p>1.方法一：使用带clear属性的空元素  </p>
-</blockquote>
-
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float3.png">  </p>
-
-<blockquote>
-<p>在在浮动元素的下面加了一个clear：both；的属性，然后浮动被清除，父元素的高度被自动填充了：  </p>
-</blockquote>
-
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float4.png" width="500px">  </p>
-
-<blockquote>
-<p>2.方法二：使用CSS的:after伪元素  </p>
-</blockquote>
-
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float5.png" width="500px" >  </p>
-
-<blockquote>
-<p>给浮动元素的容器添加一个clearfix的class，然后给这个class添加一个:after伪元素实现元素末尾添加一个看不见的块元素（Block element）清理浮动。需要注意的是为了IE6和IE7浏览器，要添加一条zoom:1;触发haslayout。  </p>
-</blockquote>
-
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float6.png" width="500px">  </p>
-
-<h4>(第二类)：触发浮动元素父元素的 BFC (Block Formatting Contexts, 块级格式化上下文)，使到该父元素可以包含浮动元素</h4>
-
-<blockquote>
-<p>3.方法三：使用CSS的overflow属性  </p>
-</blockquote>
-
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float7.png">  </p>
-
-<blockquote>
-<p>给浮动元素的容器添加overflow:hidden;或overflow:auto;可以清除浮动，另外在 IE6 中还需要触发 hasLayout ，例如为父元素设置容器宽高或设置 zoom:1。  </p>
-</blockquote>
-
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float4.png" width="500px">  </p>
-
-<blockquote>
-<p>4.方法四：给浮动的元素的容器添加浮动(但是这样会使其整体浮动，影响布局，不推荐使用. )  </p>
-</blockquote>
-
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/float8.png">  </p>
-
-<blockquote>
-<p>显示结果与方法三相同就不再列出。  </p>
-</blockquote>
-
-<h4>四.后记</h4>
-
-<blockquote>
-<p>网上推荐说在网页主要布局时使用:after伪元素方法并作为主要清理浮动方式；在小模块如ul里使用overflow:hidden;如果本身就是浮动元素则可自动清除内部浮动，无需格外处理；正文中使用邻接元素清理之前的浮动。回顾一下洗洗睡觉(●°u°●)​ 」  </p>
-</blockquote>
 
             ]]>
         </content>
