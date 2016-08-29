@@ -15,20 +15,17 @@
         <id>http://xuting.me/H5BP/</id>
         <content type="html">
             <![CDATA[
-             <p><a href="https://html5boilerplate.com/">HTML5 Boilerplate(H5BP)</a>是一个由 Paul Irish（Google Chrome 开发人员、jQuery 项目成员、Modernizr 作者、yayQuery 播客主持人）主导的“前端开发模版”,也可以简单理解为web前端的最佳实践的HTML+CSS+jquery模板集合，帮你构建 快速, 健壮, 并且适应力强的web app或网站。</p>
+             <blockquote>
+<p><a href="https://html5boilerplate.com/">HTML5 Boilerplate(H5BP)</a>是一个由 Paul Irish（Google Chrome 开发人员、jQuery 项目成员、Modernizr 作者、yayQuery 播客主持人）主导的“前端开发模版”,也可以简单理解为web前端的最佳实践的HTML+CSS+jquery模板集合，帮你构建 快速, 健壮, 并且适应力强的web app或网站。</p>
+</blockquote>
 
 <p>一、H5BP 特性简介</p>
 
 <ul>
-<li><p>由 Paul Irish 首创的在 HTML 页面的 body 上使用 IE 条件注释判断浏览器版本，从而大大简化了针对 IE Hack 的成本（在后来的版本中升级为在 <html> 标签中加入条件注释）</p></li>
+<li><p>首创在 HTML 页面的 body 上使用 IE 条件注释判断浏览器版本，从而大大简化了针对 IE Hack 的成本（在后来的版本中升级为在 <html> 标签中加入条件注释）</p></li>
 <li><p>HTML5 集成，默认使用了很多 HTML5 的特性，并且使其兼容旧版本浏览器</p></li>
-</ul>
-
-<p>大量针对服务器的默认配置，无需修改即可配置一个安全、标准的 web 服务器</p>
-
-<p>完整的 JS 调试机制 —— 即使在 IE 下</p>
-
-<ul>
+<li><p>大量针对服务器的默认配置，无需修改即可配置一个安全、标准的 web 服务器</p></li>
+<li><p>完整的 JS 调试机制 —— 即使在 IE 下</p></li>
 <li><p>大量使用 CSS3 技术，并且集成了几乎所有来自框架中和技术大牛们口头相传的 CSS 技巧</p></li>
 <li><p>压缩包内包含了 一个干净、移动终端友好的HTML模版；优化过的Google统计代码；触摸屏设备上使用的图标；还有丰富的文档、技巧、窍门</p></li>
 <li><p>包含了 Normalize.css— 一个先进的、支持HTML5的CSS reset — 和基础样式、辅助功能、media queries、打印样式</p></li>
