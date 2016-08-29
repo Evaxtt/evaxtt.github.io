@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>
+HTML5 Boilerplate | Xtt's Blog
+</title>
+  <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.4.2/css/amazeui.min.css">
+  <link rel="stylesheet" href="http://xuting.me/static/css/style.css?v=b281f0b0e1e87644ea2fd9f21d40f1b3" type="text/css" />
+  <link rel="stylesheet" href="http://xuting.me/static/css/pygments_style.css?v=f52807bdba7d67ebabc3ce287f67bf67" type="text/css" />
+
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?7a7d4c2736963f63925bf3b3091085c4";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- header-->
+    <header class="header-wrapper">
+      <div class="header-container">
+        <nav>
+          <ul class="header-nav">
+            <li><a href="http://xuting.me/"><span class="am-icon-sm am-icon-home" id="nav-icon"></span>Home</a></li>
+            <!--<li><a href="http://xuting.me/Board/"><span class="am-icon-sm am-icon-heart" id="nav-icon"></span>Board</a></li>-->
+            <li><a href="http://xuting.me/archive/index.html"><span class="am-icon-sm am-icon-archive" id="nav-icon"></span>Archives</a></li>
+            <li><a href="http://xuting.me/AboutMe/"><span class="am-icon-sm am-icon-user-secret" id="nav-icon"></span>AboutMe</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- header -->
+
+    <!-- conetent -->
+    <div class="content-wrapper">
+      <div class="am-g am-g-fixed blog-g-fixed">
+        <div class="am-u-md-9">
+        
+<article class="post-main" id="post-font">
+  <header class="blog-header">
+    <span class="round-date">
+      <span class="month">08月</span>
+      <span class="day">26</span>
+    </span>
+    <p class="blog-title">HTML5 Boilerplate</p>
+    <p class="blog-meta">
+      <i class="am-icon-calendar"></i> Published at Aug 26, 2016 • 
+      <!--<i class="am-icon-binoculars"></i> 87 次围观 • -->
+      <!--<i class="am-icon-bookmark"></i> 0条评论-->
+      
+        <a class="am-badge am-badge-primary am-radius" href="http://xuting.me/tag/font-end/">font-end</a>
+      
+    </p>
+
+  </header>
+  <section class="blog-content">
+    <p><a href="https://html5boilerplate.com/">HTML5 Boilerplate(H5BP)</a>是一个由 Paul Irish（Google Chrome 开发人员、jQuery 项目成员、Modernizr 作者、yayQuery 播客主持人）主导的“前端开发模版”,也可以简单理解为web前端的最佳实践的HTML+CSS+jquery模板集合，帮你构建 快速, 健壮, 并且适应力强的web app或网站。</p>
+
+<p>一、H5BP 特性简介</p>
+
+<ul>
+<li><p>由 Paul Irish 首创的在 HTML 页面的 body 上使用 IE 条件注释判断浏览器版本，从而大大简化了针对 IE Hack 的成本（在后来的版本中升级为在 <html> 标签中加入条件注释）</p></li>
+<li><p>HTML5 集成，默认使用了很多 HTML5 的特性，并且使其兼容旧版本浏览器</p></li>
+</ul>
+
+<p>大量针对服务器的默认配置，无需修改即可配置一个安全、标准的 web 服务器</p>
+
+<p>完整的 JS 调试机制 —— 即使在 IE 下</p>
+
+<ul>
+<li><p>大量使用 CSS3 技术，并且集成了几乎所有来自框架中和技术大牛们口头相传的 CSS 技巧</p></li>
+<li><p>压缩包内包含了 一个干净、移动终端友好的HTML模版；优化过的Google统计代码；触摸屏设备上使用的图标；还有丰富的文档、技巧、窍门</p></li>
+<li><p>包含了 Normalize.css— 一个先进的、支持HTML5的CSS reset — 和基础样式、辅助功能、media queries、打印样式</p></li>
+<li><p>自带了两个优秀的Javascript工具库的最新版本： jQuery (默认链接到 Google的CDN, 如果CDN失效，本地文件作为后备) 和Modernizr 浏览器特性监测工具库，可以检测浏览器对新特性的支持能力，方便针对旧版本浏览</p></li>
+<li><p>为所有浏览环境做了优化，包括移动版本和打印版本</p></li>
+</ul>
+
+<p>二、如何使用H5BP</p>
+
+<ol>
+  
+<li>下载H5BP
+  
+<P>下载地址：<a href="https://html5boilerplate.com/">HTML5 Boilerplate(H5BP)</a>
+  
+</P>
+  
+</li>
+  
+<li>删除不必要的样板文件
+  
+<p>删除下列只与H5BP有关的文件：<br>
+  
+- CHANGELOG.md<br>
+  
+- CONTRIBUTING.md<br>
+  
+- doc文件夹及其内容<br>
+  
+- 删除css文件夹内不需要的样式文件<br>
+  
+</p></li>
+  
+
+  
+<li>理解样板中的.htaccess文件<br>
+  
+建议先看一遍H5BP的文档（<a href="https://html5boilerplate.com/">https://html5boilerplate.com/</a>），此文件本身也有详细的注释，可以打开编辑器从头到尾看一遍，这个文件夹的内容不全都有用，主要取决于你的主机设置和站点需求，不过这个文件的一个主要用途是保证站点性能最优。
+  
+<p></p></li>
+  
+
+  
+<li>可选择更新的样板文件<br>
+  
+<p>样板中的下列文件提供了项目的标准信息，根据需要可以更新它们：<br>
+  
+- humans.txt:这个文件记载了贡献者，H5BP、Bootstrap等<br>
+  
+- LICENSE.md:在H5BP许可前面，可加上你基于该许可构建的网站的许可信息，在H5BP许可之后，加上Bootstrap以及其他站点中用到的重要的库的许可信息。<br>
+  
+- README.md:加上自己的项目说明信息并更新这个文件。</p></li>
+  
+
+  
+<li>更新站点桌面图标和触摸设备图标<br>
+  
+不要忘了用自己项目的图标替换H5BP默认的图标文件，包括以下图标:<br>
+  
+- apple-touch-icon.png:为确保所有移动设备都有最佳效果，这个图标应该是144px*144px方形图标<br>
+  
+- favicon.ico:32px方形图标<br>
+  
+<p></p></li>
+  
+
+  
+<li>加入Bootstrap
+  
+文件
+  
+<p>
+  
+现在我们考虑把H5BP和bootstrap结合使用，我们需要从bootstrap提供的一大推文件中选出需要的部分：<br>  
+
+  
+<strong>- 字体：</strong><br>把fonts文件夹复制到H5BP文件夹的根目录，这个文件夹包含bootstrap重要的Glyphicon字体。<br>为保险起见，在这个fonts文件夹建一个.hatccsee文件，防止因为越来越多的CDN为你的网站缓存静态资源，如果没有这个文件某些浏览器会拒绝识别你的WEB字体，在创建的.hatccss文件中添加如下代码：<br>
+  
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/H5BP.png"><br>  
+
+  
+<strong>- JavaScript<br></strong>
+  
+在js目录下创建一个bootstrap文件夹，然后把bootstrap的js脚本文件拷到这个文件夹下，便于优化网站性能，即可按需选用插件、排除其他文件并缩减文件大小。<br>
+  
+H5BP采用的方法是将所有的插件代码都复制到plugins.js模板文件，这是结束开发之后的最佳做法，因为这样可以减少http请求，加快站点的加载速度。所有现在我们需要找到Bootstrap文件夹下的bootstrap.min.js文件，打开->全选代码->复制->粘贴到plugins.js模板文件中->保存并退出。<br>  
+
+  
+<strong>- css文件<br></strong>  
+<ol>
+  
+<li>第一种方法：可以直接把bootstrap的样式大文件拷贝到css文件夹内;</li>
+  
+<li>第二种方法：把bootstrap中重要的less文件夹全部复制过来：把bootstrap/less文件夹复制到H5BP文件夹的根目录下，然后使用less自定义编译css文件到css文件夹中。</li>  
+</ol>
+  
+
+<p></p></p>
+
+<p></li></p>
+
+<p><li>大盘点</p>
+
+<p>
+  
+此时的项目文件结构如下：<br>
+  
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/H5BP3.png"><br>
+  
+</p>
+  
+
+<p></li></p>
+
+<p></ol></p>
+
+  </section>
+  
+    
+        
+        
+            <div class="ds-thread"></div>
+            <script type="text/javascript">
+                var duoshuoQuery = {short_name:"evaxtt"};
+                (function() {
+                    var ds = document.createElement('script');
+                    ds.type = 'text/javascript';
+                    ds.async = true;
+                    ds.src = 'http://static.duoshuo.com/embed.js';
+                    ds.charset = 'UTF-8';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                })();
+            </script>
+        
+    
+
+</article>
+
+        </div>
+
+        <div class="sidebar">
+          <div class="am-u-md-3">
+            <!-- about me -->
+            <div class="panel about-me">
+              <div class="about-me-bg"></div>
+              <div class="about-me-content">
+                <a href="http://xuting.me"><img class="avatar" src="http://7xpt78.com1.z0.glb.clouddn.com/tt.jpg"></img></a>
+                <h5 class="about-me-name"><a href="http://xuting.me/AboutMe/"> Evaxtt </a></h5>
+                <p class="about-me-words">9岁技术媛</p>
+                <ul class="about-me-ul">
+                  <li class="about-me-li">
+                    <a class="about-me-li-content" href="http://xuting.me/archive/index.html">
+                      日志
+                      <h5 class="about-me-li-h5">12</h5>
+                    </a>
+                  </li>
+                  <li class="about-me-li">
+                    <a class="about-me-li-content" href="http://xuting.me/tag/index.html">
+                      标签
+                      <h5 class="about-me-li-h5">8</h5>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- about me -->
+            <!-- contact-me -->
+            <div class="contact-me panel-two">
+              <h3 class="panel-title">Follow Me</h5>
+              <div class="contact-me-icons">
+                <a href="https://github.com/Evaxtt" title="Github: Evaxtt" target="_blank"><i class="am-icon-github am-icon-md"></i></a>
+                <!--<a href="https://twitter.com/Eva_studying" title="Twitter: xuting.me" target="_blank"><i class="am-icon-twitter am-icon-md"></i></a>-->
+                <a href="http://weibo.com/u/2946291917?topnav=1&wvr=6&topsug=1&is_all=1" title="Weibo: 一只水饺" target="_blank"><i class="am-icon-weibo am-icon-md"></i></a>
+                <a href="https://www.zhihu.com/people/xu-ting-ting-62-33" title="zhihu" target="_blank"><i class="am-icon-share-alt am-icon-md"></i></a>
+                <!--<a href="douban" title="豆瓣" target="_blank"><i class="am-icon-globe am-icon-md"></i></a>-->
+                </a> 
+              </div>
+            </div>
+            <!-- contact-me-->
+            <!-- email-me -->
+            <div class="panel-two">
+              <h3 class="panel-title">Contact Me</h5>
+              <img src="http://7xpt78.com1.z0.glb.clouddn.com/mail%E5%89%AF%E6%9C%AC.png">
+              <!--<img src="http://7xpt78.com1.z0.glb.clouddn.com/youxiang.gif">-->
+            </div>
+            <!-- email-me-->
+            <!-- recently -->
+            <div class="shuoshuo panel-two">
+              <h5 class="panel-title">博主说说</h5>
+              <div class="shuoshuo-content">
+                心之所向，素履以往。<br>
+                爱我锋利的伤痕，也要爱我成熟的天真。
+              </div>
+            </div>
+            <!-- recently -->
+            <!-- Linux Cn -->
+            <div class="about-copyright panel-two">
+            ©Powered by<a href="https://github.com/whtsky/Catsup"> Catsup</a>and<a href="https://http://pages.github.com/"> Github Pages </a>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- conetent -->
+  </div>
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"kennethyo"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- 多说公共JS代码 end -->
+</body>
+</html>

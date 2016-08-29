@@ -3,8 +3,151 @@
     <title>Xtt's Blog</title>
     <link href="" rel="self" />
     <link href="http://xuting.me/" />
-    <updated>2016-07-23T13:00:00Z</updated>
+    <updated>2016-08-26T20:00:00Z</updated>
     <id>http://xuting.me/</id>
+    
+    <entry>
+        <title><![CDATA[HTML5 Boilerplate]]></title>
+        <author><name>xtt</name><uri>http://xuting.me/</uri></author>
+        <link href="http://xuting.me/H5BP/"/>
+        <updated>2016-08-26T20:00:00Z</updated>
+        <published>2016-08-26T20:00:00Z</published>
+        <id>http://xuting.me/H5BP/</id>
+        <content type="html">
+            <![CDATA[
+             <p><a href="https://html5boilerplate.com/">HTML5 Boilerplate(H5BP)</a>是一个由 Paul Irish（Google Chrome 开发人员、jQuery 项目成员、Modernizr 作者、yayQuery 播客主持人）主导的“前端开发模版”,也可以简单理解为web前端的最佳实践的HTML+CSS+jquery模板集合，帮你构建 快速, 健壮, 并且适应力强的web app或网站。</p>
+
+<p>一、H5BP 特性简介</p>
+
+<ul>
+<li><p>由 Paul Irish 首创的在 HTML 页面的 body 上使用 IE 条件注释判断浏览器版本，从而大大简化了针对 IE Hack 的成本（在后来的版本中升级为在 <html> 标签中加入条件注释）</p></li>
+<li><p>HTML5 集成，默认使用了很多 HTML5 的特性，并且使其兼容旧版本浏览器</p></li>
+</ul>
+
+<p>大量针对服务器的默认配置，无需修改即可配置一个安全、标准的 web 服务器</p>
+
+<p>完整的 JS 调试机制 —— 即使在 IE 下</p>
+
+<ul>
+<li><p>大量使用 CSS3 技术，并且集成了几乎所有来自框架中和技术大牛们口头相传的 CSS 技巧</p></li>
+<li><p>压缩包内包含了 一个干净、移动终端友好的HTML模版；优化过的Google统计代码；触摸屏设备上使用的图标；还有丰富的文档、技巧、窍门</p></li>
+<li><p>包含了 Normalize.css— 一个先进的、支持HTML5的CSS reset — 和基础样式、辅助功能、media queries、打印样式</p></li>
+<li><p>自带了两个优秀的Javascript工具库的最新版本： jQuery (默认链接到 Google的CDN, 如果CDN失效，本地文件作为后备) 和Modernizr 浏览器特性监测工具库，可以检测浏览器对新特性的支持能力，方便针对旧版本浏览</p></li>
+<li><p>为所有浏览环境做了优化，包括移动版本和打印版本</p></li>
+</ul>
+
+<p>二、如何使用H5BP</p>
+
+<ol>
+  
+<li>下载H5BP
+  
+<P>下载地址：<a href="https://html5boilerplate.com/">HTML5 Boilerplate(H5BP)</a>
+  
+</P>
+  
+</li>
+  
+<li>删除不必要的样板文件
+  
+<p>删除下列只与H5BP有关的文件：<br>
+  
+- CHANGELOG.md<br>
+  
+- CONTRIBUTING.md<br>
+  
+- doc文件夹及其内容<br>
+  
+- 删除css文件夹内不需要的样式文件<br>
+  
+</p></li>
+  
+
+  
+<li>理解样板中的.htaccess文件<br>
+  
+建议先看一遍H5BP的文档（<a href="https://html5boilerplate.com/">https://html5boilerplate.com/</a>），此文件本身也有详细的注释，可以打开编辑器从头到尾看一遍，这个文件夹的内容不全都有用，主要取决于你的主机设置和站点需求，不过这个文件的一个主要用途是保证站点性能最优。
+  
+<p></p></li>
+  
+
+  
+<li>可选择更新的样板文件<br>
+  
+<p>样板中的下列文件提供了项目的标准信息，根据需要可以更新它们：<br>
+  
+- humans.txt:这个文件记载了贡献者，H5BP、Bootstrap等<br>
+  
+- LICENSE.md:在H5BP许可前面，可加上你基于该许可构建的网站的许可信息，在H5BP许可之后，加上Bootstrap以及其他站点中用到的重要的库的许可信息。<br>
+  
+- README.md:加上自己的项目说明信息并更新这个文件。</p></li>
+  
+
+  
+<li>更新站点桌面图标和触摸设备图标<br>
+  
+不要忘了用自己项目的图标替换H5BP默认的图标文件，包括以下图标:<br>
+  
+- apple-touch-icon.png:为确保所有移动设备都有最佳效果，这个图标应该是144px*144px方形图标<br>
+  
+- favicon.ico:32px方形图标<br>
+  
+<p></p></li>
+  
+
+  
+<li>加入Bootstrap
+  
+文件
+  
+<p>
+  
+现在我们考虑把H5BP和bootstrap结合使用，我们需要从bootstrap提供的一大推文件中选出需要的部分：<br>  
+
+  
+<strong>- 字体：</strong><br>把fonts文件夹复制到H5BP文件夹的根目录，这个文件夹包含bootstrap重要的Glyphicon字体。<br>为保险起见，在这个fonts文件夹建一个.hatccsee文件，防止因为越来越多的CDN为你的网站缓存静态资源，如果没有这个文件某些浏览器会拒绝识别你的WEB字体，在创建的.hatccss文件中添加如下代码：<br>
+  
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/H5BP.png"><br>  
+
+  
+<strong>- JavaScript<br></strong>
+  
+在js目录下创建一个bootstrap文件夹，然后把bootstrap的js脚本文件拷到这个文件夹下，便于优化网站性能，即可按需选用插件、排除其他文件并缩减文件大小。<br>
+  
+H5BP采用的方法是将所有的插件代码都复制到plugins.js模板文件，这是结束开发之后的最佳做法，因为这样可以减少http请求，加快站点的加载速度。所有现在我们需要找到Bootstrap文件夹下的bootstrap.min.js文件，打开->全选代码->复制->粘贴到plugins.js模板文件中->保存并退出。<br>  
+
+  
+<strong>- css文件<br></strong>  
+<ol>
+  
+<li>第一种方法：可以直接把bootstrap的样式大文件拷贝到css文件夹内;</li>
+  
+<li>第二种方法：把bootstrap中重要的less文件夹全部复制过来：把bootstrap/less文件夹复制到H5BP文件夹的根目录下，然后使用less自定义编译css文件到css文件夹中。</li>  
+</ol>
+  
+
+<p></p></p>
+
+<p></li></p>
+
+<p><li>大盘点</p>
+
+<p>
+  
+此时的项目文件结构如下：<br>
+  
+<img src="http://7xpt78.com1.z0.glb.clouddn.com/H5BP3.png"><br>
+  
+</p>
+  
+
+<p></li></p>
+
+<p></ol></p>
+
+            ]]>
+        </content>
+    </entry>
     
     <entry>
         <title><![CDATA[sublime text插件推荐]]></title>
@@ -313,150 +456,6 @@
 &nbsp; &nbsp; &nbsp; &nbsp;为了毕设的中期检查熬了一个星期的夜，早上依旧要精神满满的去上班，天之道我是有多讨厌写文档，最近上班已经成为生活中唯一的乐趣了，可以让我暂且忘记要写文档这件事唉。。。<br/><br/>
 &nbsp; &nbsp; &nbsp; &nbsp;在这个阴雨绵绵的周末，一个人坐在咖啡厅看书敲代码，看起来很悠闲惬意的事但难免让人心生孤独。虽然现在很享受一个人的生活，但是偶尔还是会矫情一把。我还不知道有哪些更好的方法让自己慢慢变的内心沉稳，听说读书使人沉稳，所以现在多读书吧，努力做一个不浮躁的人。以前不相信毕业季就是分手季，现在我相信了，一年半的感情就这样说断就断了，连一句话的回复的没有，可能我们都是狠心的人吧。一直不愿意和别人细说这件事，不想成为喋喋不休抱怨自己委屈的怨妇，因为我一直是一个酷酷的girl，我知道自己喜欢什么不喜欢什么，我知道该争取什么知道该放弃什么。虽然有时候还是害怕夜里听情歌，害怕翻以前的照片，害怕听到以前的录音，但是我知道时间可以冲淡一切。每当这个时候我都会提醒自己，在人这一生的时间洪流中失恋并不是什么大事，注定不能厮守的人耗在一起也只是彼此浪费时间。回忆总是美好的是因为大脑具备遗忘痛苦的功能，怀旧是一种错觉，其实可能只不过是幻觉。每个人都有使自己的记忆变得更加清白更加美好的倾向，所以往往会对自己的记忆进行各种形式的修补，甚至进一步的加工才会觉得心满意足。所以要不停的提醒自己永远不要陷入好了伤疤完了疼的循环。我不想成为表面洒脱实际悲伤逆流成河的苦情深情代表，我只希望自己可以内心沉稳表面单纯，由内而外而不是由外而内。<br/><br/>
 &nbsp; &nbsp; &nbsp; &nbsp; 虽然还是会偶尔为自己的才疏学浅，技术太渣而心生自卑，但是一直努力吧，即使不那么聪明过人也要相信越努力越幸运。毕竟人还是需要点鸡汤信念的。  </p>
-
-            ]]>
-        </content>
-    </entry>
-    
-    <entry>
-        <title><![CDATA[css之图像替换]]></title>
-        <author><name>xtt</name><uri>http://xuting.me/</uri></author>
-        <link href="http://xuting.me/css_image_replace/"/>
-        <updated>2016-03-30T20:00:00Z</updated>
-        <published>2016-03-30T20:00:00Z</published>
-        <id>http://xuting.me/css_image_replace/</id>
-        <content type="html">
-            <![CDATA[
-             <blockquote>
-<p>这个月有点忙，学业的事工作的事私人的事有点烦，但是不能停止学习更不能忘记写博客！ 最近看了《精通css》这本书，挑了一个点纪录一下。  </p>
-</blockquote>
-
-<h3>一.含义</h3>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;图像替代，就是像我们在平时将文本添加到文本中，然后通过css隐藏文本在它的位置上显示一个背景图片，这样，搜索引擎仍然可以搜到HTML文本，即使我们禁用css后，文本时仍然是可以显示的。<br><br/>
-引用《精通css》中的一段解释：  </p>
-
-<blockquote>
-<p>HTML文本由很多的优点。文本可以被搜索引擎读取，开发人员可以对其进行复制和粘贴，并且在浏览器中改变字体大小后，它也会改变。因此很多设计人员都想尽量的采用HTML文本而不是文本的图像，但是遗憾的是，页面设计人员对于文本有有限的选择，尽管可以通过css来控制版面但是有很多字体的效果是无法实现的，所以在某些情况下还是需要用文本的图像的。 图像替代，就是像我们在平时将文本添加到文本中，然后通过css隐藏文本在它的位置上显示一个背景图片，这样，搜索引擎仍然可以搜到HTML文本，即使我们禁用css后，文本时仍然是可以显示的。  </p>
-</blockquote>
-
-<p>引用《CSS禅意花园》中的一段解释：  </p>
-
-<blockquote>
-<p>图像替换技术使用display:none的本意并不只是想要替换文本，这样做还有一些更深层次的理由。实际上，若是没有任何提示或帮助，计算机就无法认出或读取图像中包含的文字。例如HTML中img元素，若是没有了alt属性，那么对于google等搜索引擎，以及辅助浏览设备（例如，屏幕阅读器即可阅读页面内容，并以声音的形式告诉浏览者）之类无法呈现图像的客户端来说，将变的豪无意义。而图像替换技术则保留了被替换元素中的原有文本，因此无论对任何客户而言，理解页面内容都不成问题。  </p>
-</blockquote>
-
-<h3>二.图像替换实现方法</h3>
-
-<h4>1.经典FIR，设法隐藏文字内容：（Fahrner Image Replacement）</h4>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;最早开始流行的图像替换技术，也最容易理解，但是存在一些可访问性问题所依应该避免使用。<br>  </p>
-
-<p>(1)把要替换的文本放在span标签中:<br>  </p>
-
-<blockquote>
-<p>&lt;h2&gt;<br/>
-  &lt;span&gt;Hello World &lt;span&gt;<br/>
-&lt;/h2&gt;  </p>
-</blockquote>
-
-<p>(2)然后将替换图像作为背景应用于文本元素,<br>  </p>
-
-<blockquote>
-<p>h2{<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;background:url(替换图片.gif) no-repeat;<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;width: 150px;<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;height: 35px;<br><br/>
-}  </p>
-</blockquote>
-
-<p>(3)将span的display设置为none，从而隐藏span的内容。<br>  </p>
-
-<blockquote>
-<p>span{<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;display:none;<br><br/>
-}  </p>
-</blockquote>
-
-<p>存在问题：  </p>
-
-<blockquote>
-<p>许多流行的屏幕阅读器会忽略那些display：none和visibility：hidden的元素，因为会完全忽略这个文本，造成严重的访问问题。  </p>
-</blockquote>
-
-<h4>2.设置边距或缩进将文字弹走：Phark</h4>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp; 不需要添加无语义的标签，也不需要使用display属性来隐藏文本，只需要对需要替换的文字进行非常大的负值首行所进。  </p>
-
-<blockquote>
-<p>&lt;h2&gt;<br/>
-  Hello World<br/>
-&lt;/h2&gt;<br><br/>
- h2{<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;width: 150px;<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;height: 35px;<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;text-indent:-5000px;(非常大的负值首行所进)<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;background:url(替换图片.gif) no-repeat;<br><br/>
-}  </p>
-</blockquote>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;这个方法很好的解决了屏幕阅读器的问题，但是在关闭图像仍然打开css的情况下是无效的，虽然这种情况比较小，在网速访问非常慢的情况下或者访问者能够打开图像但是设置不打开，这些情况下一些人是看不到被替换的文本的。  </p>
-
-<h4>3.Leahy和Langridge方法</h4>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;该方法不必再添加那些多余的<span>标签，且在保证屏幕阅读器可以正常阅读文本的同时，也能在页面中隐藏元素中的内容。但是并没有解决浏览器禁用图象后空白页面的可访问性问题。  </p>
-
-<blockquote>
-<p>&lt;h2&gt;<br/>
-  Hello World<br/>
-&lt;/h2&gt;<br><br/>
- h2{<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;height:0;<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;padding:30px 0 0 0;<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;overflow:hidden;<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;background:url(替换图片.gif) no-repeat;<br><br/>
-}  </p>
-</blockquote>
-
-<h4>4.用额外元素覆盖住文字：Levin方法</h4>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;Levin Alexander想出了一个绝妙的注意：不再将文本置放于span中，而是将其从span中移出来，将文本和span一起放在父元素中，然后使用这个空白的span覆盖文本，并将背景图像应用到span之上。繁琐的代码下，终于完美的解决了关闭图像打开CSS问题，但新的问题也随之出现，那就是图像不能是透明的，否则用户将会看到下面的文本。除此之外，文字内容没有被直接包含于任何节点之内，可能会给前端开发带来意想不到的麻烦。  </p>
-
-<blockquote>
-<p>&lt;h3 class=&ldquo;replace&rdquo; id=&ldquo;myh1&rdquo;&gt;And a dash of Thyme.&lt;span&gt;&lt;/span&gt;&lt;/h3&gt;  </p>
-
-<p>.replace{<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;position:relative;<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;margin:0;<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;padding:0;<br><br/>
-}<br><br/>
-.replace span{<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;display:block;<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;position:absolute;<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;top:0;<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;left:0;<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;z-index:1;<br><br/>
-}<br><br/>
-/#myh1,#myh1 span{<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;height:25px;<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;width:300px;<br><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;background:url(替换图像.png);<br><br/>
-}<br>  </p>
-</blockquote>
-
-<h4>五.基于flash和javascript：sFIR</h4>
-
-<p>Mike Davidson和Shaun Inman提出了一种新的iFIR技术。该方法使用JavaScript搜索文<br/>
-档中特定节点，将其中的内容替换成一小段Flash。<br><br/>
-引用《精通css》d对这一技术的介绍：  </p>
-
-<blockquote>
-<p>Flash允许将字体嵌入SWF文件，所以他们并不把文本换成图像，而是用Flash文件替换文本。进行这一替换的方法是使用JavaScript搜索文档，找到特定元素或者具有特定类名的元素中的所有文本。然后JavaScript将文本替换为一个小的Flash文件。接下来是真正精明的部分。这种技术并不为每段文本创建单独的Flash文件，而是将被替换的文本放回一个重复的Flash文件中。因此，触发图像替换所要做的只是添加一个类，Flash和JavaScript会完成余下的工作。另一个好处是Flash文件中的文本是可搜索的，这意味着可以轻松地复制它。  </p>
-</blockquote>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;存在问题：使用Flash替代的缺点在于改方法要求JavaScript和Flash支持，并且Flash会远大于一副普通图片，下载时会造成延迟，在较慢的电脑上页面会出现闪烁甚至停滞。  </p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;就目前来讲没有最完美的图像替换方法，但是可以用最小的代价换取效果。例如，在移动设备上可以用Levin的方法，因为一般移动设备商不会使用透明图片。而在国内，屏幕阅读器还没普及的情况下，牺牲屏幕阅读器也是可以考虑的。  </p>
 
             ]]>
         </content>
