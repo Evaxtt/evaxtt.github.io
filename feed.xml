@@ -81,16 +81,6 @@
 
 <p>用户消息以 XML 形式传至我们搭建好的服务器中，我们需要解析 XML 信息，获取出需要的信息，进行处理后对用户回复结果。</p>
 
-<p>我们先来简单看一下文本消息和图片消息的 XML 结构。</p>
-
-<p>作者：段小草</p>
-
-<p>链接：<a href="https://zhuanlan.zhihu.com/p/21354943">https://zhuanlan.zhihu.com/p/21354943</a></p>
-
-<p>来源：知乎</p>
-
-<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-
 <p>文本： </p>
 
 <blockquote>
@@ -113,7 +103,9 @@
 
 <p>图片：</p>
 
+<blockquote>
 <p><xml><br></p>
+</blockquote>
 
 <p><ToUserName>&lt;![CDATA[toUser]]&gt;</ToUserName><br></p>
 
@@ -165,21 +157,21 @@
 
 <p>搜索微信名：徐九岁。 欢迎和我的女儿小九九做朋友，有任何生活问题、情感问题、单纯聊天解闷都可以找它啦~~</p>
 
-<p>结果展示：</p>
+<p>结果展示：  </p>
 
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104104594.png" width=375px></p>
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104104594.png" width=240px></p>
 
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104410840.png" width=375px></p>
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104410840.png" width=240px></p>
 
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104440165.png" width=375px></p>
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104440165.png" width=240px></p>
 
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104501722.png" width=375px></p>
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104501722.png" width=240px></p>
 
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104524173.png" width=375px></p>
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104524173.png" width=240px></p>
 
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104546282.png" width=375px></p>
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104546282.png" width=240px></p>
 
-<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104611251.png" width=375px></p>
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104611251.png" width=240px></p>
 
 <h2>五、代码托管地址</h2>
 
