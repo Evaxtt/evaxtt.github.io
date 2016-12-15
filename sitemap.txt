@@ -1,3 +1,4 @@
+http://xuting.me/fidder/
 http://xuting.me/H5BP/
 http://xuting.me/sublime_text_plug/
 http://xuting.me/end_and_start/
@@ -14,6 +15,7 @@ http://xuting.me/catsup_for_blog/
 http://xuting.me/AboutMe/
 http://xuting.me/tag/life/
 http://xuting.me/tag/css/
+http://xuting.me/tag//
 http://xuting.me/tag/dnspod/
 http://xuting.me/tag/catsup/
 http://xuting.me/tag/dom事件/

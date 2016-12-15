@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-About me | Xtt's Blog
+Fidder | Xtt's Blog
 </title>
   <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.4.2/css/amazeui.min.css">
   <link rel="stylesheet" href="http://xuting.me/static/css/style.css?v=b281f0b0e1e87644ea2fd9f21d40f1b3" type="text/css" />
@@ -47,37 +47,68 @@ About me | Xtt's Blog
 <article class="post-main" id="post-font">
   <header class="blog-header">
     <span class="round-date">
-      <span class="month">01月</span>
-      <span class="day">01</span>
+      <span class="month">12月</span>
+      <span class="day">15</span>
     </span>
-    <p class="blog-title">About me</p>
+    <p class="blog-title">Fidder</p>
     <p class="blog-meta">
-      <i class="am-icon-calendar"></i> Published at Jan 01, 2016 • 
+      <i class="am-icon-calendar"></i> Published at Dec 15, 2016 • 
       <!--<i class="am-icon-binoculars"></i> 87 次围观 • -->
       <!--<i class="am-icon-bookmark"></i> 0条评论-->
+      
+        <a class="am-badge am-badge-primary am-radius" href="http://xuting.me/tag//"></a>
       
     </p>
 
   </header>
   <section class="blog-content">
-    <h2>Personal information:</h2>
+    <blockquote>
+<p>Fiddler是最强大最好用的Web调试工具之一，它能记录所有客户端和服务器的http和https请求，允许你监视，设置断点，甚至修改输入输出数据. 使用Fiddler无论对开发还是测试来说，都有很大的帮助。</p>
+</blockquote>
 
-<hr/>
+<h2>一、Fiddler的基本介绍</h2>
 
-<ul>
-<li>Name : 徐九岁<br/></li>
-<li>Age: 9<br/></li>
-<li>Gender: 女<br/></li>
-<li>Education: 苏州大学计算机学院大四在读<br/></li>
-<li>Hobby: 音乐，看书，跑步，篮球，美食。<br/></li>
-<li>2016&#39;wish： 认真学习，做一个美貌与技术并存的程序媛<br/></li>
-</ul>
+<p>Fiddler的官方网站:  <a href="www.fiddler2.com"><a href="http://www.fiddler2.com">www.fiddler2.com</a></a></p>
 
-<hr/>
+<p>Fiddler官方网站提供了大量的帮助文档和视频教程， 这是学习Fiddler的最好资料。</p>
 
-<h2>Thank you for coming,good luck to you~</h2>
+<p>Fiddler是最强大最好用的Web调试工具之一，它能记录所有客户端和服务器的http和https请求，允许你监视，设置断点，甚至修改输入输出数据，Fiddler包含了一个强大的基于事件脚本的子系统，并且能使用.net语言进行扩展</p>
 
-<p></br></br></br></br>  </p>
+<p>你对HTTP 协议越了解， 你就能越掌握Fiddler的使用方法. 你越使用Fiddler,就越能帮助你了解HTTP协议.</p>
+
+<p>Fiddler无论对开发人员或者测试人员来说，都是非常有用的工具</p>
+
+<h2>二、Fiddler的工作原理</h2>
+
+<p>Fiddler 是以代理web服务器的形式工作的,它使用代理地址:127.0.0.1, 端口:8888. 当Fiddler会自动设置代理， 退出的时候它会自动注销代理，这样就不会影响别的程序。不过如果Fiddler非正常退出，这时候因为Fiddler没有自动注销，会造成网页无法访问。解决的办法是重新启动下Fiddler.<br></p>
+
+<h2>三、同类的其它工具</h2>
+
+<p>同类的工具有: httpwatch, firebug, wireshark</p>
+
+<h2>四、Fiddler 如何捕获Firefox的会话</h2>
+
+<p>能支持HTTP代理的任意程序的数据包都能被Fiddler嗅探到，Fiddler的运行机制其实就是本机上监听8888端口的HTTP代理。 Fiddler2启动的时候默认IE的代理设为了127.0.0.1:8888，而其他浏览器是需要手动设置的，所以将Firefox的代理改为127.0.0.1:8888就可以监听数据了。</p>
+
+<p>Firefox 上通过如下步骤设置代理</p>
+
+<p>点击: Tools -&gt; Options,  在Options 对话框上点击Advanced tab - &gt; network tab -&gt; setting.</p>
+
+<h2>五、Firefox 中安装Fiddler插件</h2>
+
+<p>修改Firefox 中的代理比较麻烦， 不用fiddler的时候还要去掉代理。 麻烦</p>
+
+<p>推荐你在firefox中使用fiddler hook 插件, 这样你非常方便的使用Fiddler获取firefox中的request 和response</p>
+
+<p>当你安装fiddler后， 就已经装好了Fiddler hook插件， 你需要到firefox中去启用这个插件</p>
+
+<p>打开firefox   tools-&gt;Add ons -&gt; Extensions 启动 FiddlerHook<br></p>
+
+<h2>六、Fiddler如何捕获HTTPS会话</h2>
+
+<p>默认下，Fiddler不会捕获HTTPS会话，需要你设置下, 打开Fiddler  Tool-&gt;Fiddler Options-&gt;HTTPS tab,选中checkbox, 弹出的对话框，点击&quot;YES&quot;</p>
+
+<p>点击&quot;Yes&quot; 后，就设置好了。</p>
 
   </section>
   
