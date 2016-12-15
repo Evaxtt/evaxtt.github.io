@@ -15,14 +15,13 @@ http://xuting.me/catsup_for_blog/
 http://xuting.me/AboutMe/
 http://xuting.me/tag/life/
 http://xuting.me/tag/css/
-http://xuting.me/tag//
+http://xuting.me/tag/tools/
 http://xuting.me/tag/dnspod/
 http://xuting.me/tag/catsup/
 http://xuting.me/tag/dom事件/
 http://xuting.me/tag/regularExpression/
 http://xuting.me/tag/django/
 http://xuting.me/tag/html5/
-http://xuting.me/tag/tools/
 http://xuting.me/tag/index.html
 http://xuting.me/archive/2016/
 http://xuting.me/archive/index.html
