@@ -85,6 +85,7 @@
 
 <blockquote>
 <p><xml><br></p>
+</blockquote>
 
 <p><ToUserName>&lt;![CDATA[toUser]]&gt;</ToUserName><br></p>
 
@@ -99,7 +100,6 @@
 <p><MsgId>1234567890123456</MsgId><br></p>
 
 <p></xml><br></p>
-</blockquote>
 
 <p>图片：</p>
 
