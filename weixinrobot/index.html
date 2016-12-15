@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>
+微信公众号开发--微信机器人 | Xtt's Blog
+</title>
+  <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.4.2/css/amazeui.min.css">
+  <link rel="stylesheet" href="http://xuting.me/static/css/style.css?v=b281f0b0e1e87644ea2fd9f21d40f1b3" type="text/css" />
+  <link rel="stylesheet" href="http://xuting.me/static/css/pygments_style.css?v=f52807bdba7d67ebabc3ce287f67bf67" type="text/css" />
+
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?7a7d4c2736963f63925bf3b3091085c4";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- header-->
+    <header class="header-wrapper">
+      <div class="header-container">
+        <nav>
+          <ul class="header-nav">
+            <li><a href="http://xuting.me/"><span class="am-icon-sm am-icon-home" id="nav-icon"></span>Home</a></li>
+            <!--<li><a href="http://xuting.me/Board/"><span class="am-icon-sm am-icon-heart" id="nav-icon"></span>Board</a></li>-->
+            <li><a href="http://xuting.me/archive/index.html"><span class="am-icon-sm am-icon-archive" id="nav-icon"></span>Archives</a></li>
+            <li><a href="http://xuting.me/AboutMe/"><span class="am-icon-sm am-icon-user-secret" id="nav-icon"></span>AboutMe</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- header -->
+
+    <!-- conetent -->
+    <div class="content-wrapper">
+      <div class="am-g am-g-fixed blog-g-fixed">
+        <div class="am-u-md-9">
+        
+<article class="post-main" id="post-font">
+  <header class="blog-header">
+    <span class="round-date">
+      <span class="month">10月</span>
+      <span class="day">20</span>
+    </span>
+    <p class="blog-title">微信公众号开发--微信机器人</p>
+    <p class="blog-meta">
+      <i class="am-icon-calendar"></i> Published at Oct 20, 2016 • 
+      <!--<i class="am-icon-binoculars"></i> 87 次围观 • -->
+      <!--<i class="am-icon-bookmark"></i> 0条评论-->
+      
+        <a class="am-badge am-badge-primary am-radius" href="http://xuting.me/tag/weixin/">weixin</a>
+      
+    </p>
+
+  </header>
+  <section class="blog-content">
+    <blockquote>
+<p>抱着了解微信公众号开发流程的目的看了一些文档，摸索了几天然后照着搭了一个简单的python微信公众号，主要功能是一个微信机器人，可以聊天和生活百科咨询，记录一下仅供参考。</p>
+</blockquote>
+
+<p>开发需要：<br></p>
+
+<p><ol></p>
+
+<p><li>配置python本地环境</li></p>
+
+<p><li>新浪云SAE</li></p>
+
+<p><li>Git代码托管</li></p>
+
+<p><li>微信公众号</li></p>
+
+<p></lo></p>
+
+<p>前三步骤网上有很多教程可以根据教程一步一步搭建，主要写一下微信公众号的开发。</p>
+
+<h2>一、服务器配置和Token认证</h2>
+
+<p>之前在 SAE 平台创建的是空应用，所以我们需要做一些基础的配置工作。这次我们选择使用 web.py （Python 2.7）来进行服务器搭建，如果本地没有 web.py 库的话可以通过 pip 命令进行安装（pip install web.py）。</p>
+
+<p>之后我们需要创建一个项目，并编辑如下的基本代码。</p>
+
+<p>config.yaml</p>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/102929176.png" alt="mark"/></p>
+
+<p>index.wsgi</p>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/103033967.png" alt="mark"/></p>
+
+<p>这两部分是 web.py 的基础配置文件，之后我们需要开始编写实现微信公众平台功能的代码。</p>
+
+<p>新建weixinInterface.py</p>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/103618936.png" alt="mark"/></p>
+
+<p>编写好这三部分的代码后，我们就实现了最简单的微信平台认证配置，这三部分代码中需要修改的只有 token 字段，需要和你在微信平台中输入的 token 保持一致。（之后有机会再详细写具体的认证过程吧，这次只罗列一下实现过程，需要注意的是认证 token 我们只需要用 GET 方法而之后的发消息需要用 POST 方法。）</p>
+
+<p>这时我们需要把代码上传到 SAE 平台，然后在微信平台进行认证请求。</p>
+
+<p>在文件根目录右键打开 Git Bash，依次输入如下命令，过程中可能会需要输入 SAE 的用户名和安全密码，按照提示操作即可。</p>
+
+<blockquote>
+<p>git init<br></p>
+</blockquote>
+
+<p>git remote add sae <a href="https://git.sinacloud.com/yourapp">https://git.sinacloud.com/yourapp</a><br></p>
+
+<p>git add .<br></p>
+
+<p>git commit -m &#39;your commit message&#39;<br></p>
+
+<p>git push sae master:1<br></p>
+
+<p>之后回到公众平台的开发者页面，填写 URL 为 <a href="http://xxxx.sinaapp.com/weixin">http://xxxx.sinaapp.com/weixin</a> 填写 Token 与代码中的 token 一致，EncodingAESKey 随机生成，然后点击提交认证，如果上面步骤没有操作错误，这一步就可以认证成功了。</p>
+
+<h2>二、简单的消回复机制</h2>
+
+<p>用户与公众号之间的消息交互类型分为文本、图片、语音、视频、小视频、地理位置、链接等，本文中主要会用到文本和图片两种消息类型。</p>
+
+<p>用户消息以 XML 形式传至我们搭建好的服务器中，我们需要解析 XML 信息，获取出需要的信息，进行处理后对用户回复结果。</p>
+
+<p>我们先来简单看一下文本消息和图片消息的 XML 结构。</p>
+
+<p>作者：段小草</p>
+
+<p>链接：<a href="https://zhuanlan.zhihu.com/p/21354943">https://zhuanlan.zhihu.com/p/21354943</a></p>
+
+<p>来源：知乎</p>
+
+<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+<p>文本： </p>
+
+<blockquote>
+<p><xml><br></p>
+</blockquote>
+
+<p><ToUserName>&lt;![CDATA[toUser]]&gt;</ToUserName><br></p>
+
+<p><FromUserName>&lt;![CDATA[fromUser]]&gt;</FromUserName><br></p>
+
+<p><CreateTime>1348831860</CreateTime><br></p>
+
+<p><MsgType>&lt;![CDATA[text]]&gt;</MsgType><br></p>
+
+<p><Content>&lt;![CDATA[this is a test]]&gt;</Content><br></p>
+
+<p><MsgId>1234567890123456</MsgId><br></p>
+
+<p></xml><br></p>
+
+<p>图片：</p>
+
+<p><xml><br></p>
+
+<p><ToUserName>&lt;![CDATA[toUser]]&gt;</ToUserName><br></p>
+
+<p><FromUserName>&lt;![CDATA[fromUser]]&gt;</FromUserName><br></p>
+
+<p><CreateTime>1348831860</CreateTime><br></p>
+
+<p><MsgType>&lt;![CDATA[image]]&gt;</MsgType><br></p>
+
+<p><PicUrl>&lt;![CDATA[this is a url]]&gt;</PicUrl><br></p>
+
+<p><MediaId>&lt;![CDATA[media_id]]&gt;</MediaId><br></p>
+
+<p><MsgId>1234567890123456</MsgId><br></p>
+
+<p></xml><br></p>
+
+<p>可以看到，两者共有的字段为ToUserName、FromUserName、CreateTime、MsgType和MsgId，对于文本消息，我们可以通过Content字段直接提取出消息文本内容，但是对于图片消息，我们需要通过PicUrl或MediaId获取图片信息后进行处理。</p>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/103808302.png" alt="mark"/></p>
+
+<h2>三、申请图灵机器人接口</h2>
+
+<p>图灵机器人官网：</p>
+
+<p><a href="http://www.tuling123.com/"><a href="http://www.tuling123.com/">http://www.tuling123.com/</a></a></p>
+
+<p>1.注册账号</p>
+
+<p>2.新建机器人</p>
+
+<p>免费版每天可以调5000次，如果只是为了娱乐的开发应该就够用的了</p>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/105151047.png"></p>
+
+<p>3.设置机器人的信息，添加需要的知识库</p>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/105348259.png" alt="mark"/></p>
+
+<p>4.添加能力拓展功能</p>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/105425415.png" alt="mark"/></p>
+
+<p>5.接入公众号</p>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/105505459.png" width=700></p>
+
+<h2>四、微信公众号成果展示</h2>
+
+<p>搜索微信名：徐九岁。 欢迎和我的女儿小九九做朋友，有任何生活问题、情感问题、单纯聊天解闷都可以找它啦~~</p>
+
+<p>结果展示：</p>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104104594.png" width=375px></p>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104410840.png" width=375px></p>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104440165.png" width=375px></p>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104501722.png" width=375px></p>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104524173.png" width=375px></p>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104546282.png" width=375px></p>
+
+<p><img src="http://7xpt78.com1.z0.glb.clouddn.com/blog/20161215/104611251.png" width=375px></p>
+
+<h2>五、代码托管地址</h2>
+
+<p><a href="https://github.com/Evaxtt/weixinsub">微信机器人代码</a></p>
+
+  </section>
+  
+    
+        
+        
+            <div class="ds-thread"></div>
+            <script type="text/javascript">
+                var duoshuoQuery = {short_name:"evaxtt"};
+                (function() {
+                    var ds = document.createElement('script');
+                    ds.type = 'text/javascript';
+                    ds.async = true;
+                    ds.src = 'http://static.duoshuo.com/embed.js';
+                    ds.charset = 'UTF-8';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                })();
+            </script>
+        
+    
+
+</article>
+
+        </div>
+        <!-- <div>            
+           <ul data-am-widget="pagination" class="am-pagination am-pagination-default">
+                <li class="am-pagination-first ">
+                  <a href="#" class="">第一页</a>
+                </li>
+                <li class="am-pagination-prev ">
+                  <a href="#" class="">上一页</a>
+                </li>
+                <li class="">
+                  <a href="#" class="">1</a>
+                </li>
+                <li class="am-active">
+                  <a href="#" class="am-active">2</a>
+                </li>
+                <li class="">
+                  <a href="#" class="">3</a>
+                </li>
+                <li class="">
+                  <a href="#" class="">4</a>
+                </li>
+                <li class="am-pagination-next ">
+                  <a href="#" class="">下一页</a>
+                </li>
+                <li class="am-pagination-last ">
+                  <a href="#" class="">最末页</a>
+                </li>
+            </ul>
+        </div> -->
+
+        <div class="sidebar">
+          <div class="am-u-md-3">
+            <!-- about me -->
+            <div class="panel about-me">
+              <div class="about-me-bg"></div>
+              <div class="about-me-content">
+                <a href="http://xuting.me"><img class="avatar" src="http://7xpt78.com1.z0.glb.clouddn.com/tt.jpg"></img></a>
+                <h5 class="about-me-name"><a href="http://xuting.me/AboutMe/"> Evaxtt </a></h5>
+                <p class="about-me-words">9岁技术媛</p>
+                <ul class="about-me-ul">
+                  <li class="about-me-li">
+                    <a class="about-me-li-content" href="http://xuting.me/archive/index.html">
+                      日志
+                      <h5 class="about-me-li-h5">15</h5>
+                    </a>
+                  </li>
+                  <li class="about-me-li">
+                    <a class="about-me-li-content" href="http://xuting.me/tag/index.html">
+                      标签
+                      <h5 class="about-me-li-h5">11</h5>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- about me -->
+            <!-- contact-me -->
+            <div class="contact-me panel-two">
+              <h3 class="panel-title">Follow Me</h5>
+              <div class="contact-me-icons">
+                <a href="https://github.com/Evaxtt" title="Github: Evaxtt" target="_blank"><i class="am-icon-github am-icon-md"></i></a>
+                <!--<a href="https://twitter.com/Eva_studying" title="Twitter: xuting.me" target="_blank"><i class="am-icon-twitter am-icon-md"></i></a>-->
+                <a href="http://weibo.com/u/2946291917?topnav=1&wvr=6&topsug=1&is_all=1" title="Weibo: 一只水饺" target="_blank"><i class="am-icon-weibo am-icon-md"></i></a>
+                <a href="https://www.zhihu.com/people/xu-ting-ting-62-33" title="zhihu" target="_blank"><i class="am-icon-share-alt am-icon-md"></i></a>
+                <!--<a href="douban" title="豆瓣" target="_blank"><i class="am-icon-globe am-icon-md"></i></a>-->
+                </a> 
+              </div>
+            </div>
+            <!-- contact-me-->
+            <!-- email-me -->
+            <div class="panel-two">
+              <h3 class="panel-title">Contact Me</h5>
+              <img src="http://7xpt78.com1.z0.glb.clouddn.com/mail%E5%89%AF%E6%9C%AC.png">
+              <!--<img src="http://7xpt78.com1.z0.glb.clouddn.com/youxiang.gif">-->
+            </div>
+            <!-- email-me-->
+            <!-- recently -->
+            <div class="shuoshuo panel-two">
+              <h5 class="panel-title">博主说说</h5>
+              <div class="shuoshuo-content">
+                心之所向，素履以往。
+              </div>
+            </div>
+            <!-- recently -->
+            <!-- Linux Cn -->
+            <div class="about-copyright panel-two">
+            ©Powered by<a href="https://github.com/whtsky/Catsup"> Catsup</a>and<a href="https://http://pages.github.com/"> Github Pages </a>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- conetent -->
+  </div>
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"kennethyo"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- 多说公共JS代码 end -->
+</body>
+</html>

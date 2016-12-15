@@ -1,3 +1,4 @@
+http://xuting.me/weixinrobot/
 http://xuting.me/H5BP/
 http://xuting.me/fidder/
 http://xuting.me/sublime_text_plug/
@@ -19,6 +20,7 @@ http://xuting.me/tag/tools/
 http://xuting.me/tag/dnspod/
 http://xuting.me/tag/catsup/
 http://xuting.me/tag/dom事件/
+http://xuting.me/tag/weixin/
 http://xuting.me/tag/regularExpression/
 http://xuting.me/tag/django/
 http://xuting.me/tag/html5/
